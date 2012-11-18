@@ -7,6 +7,7 @@ This document uses the following conventions:
 
 * "$> `command`" denotes a command line prompt and associated command
 * Any `word` in a mono spaced font is a technical keyword
+* References to source material are links
 
 ##Installation
 
@@ -68,28 +69,28 @@ There exists a [package](https://aur.archlinux.org/packages/radiotray/) in the [
 Just follow the typical Arch Linux [installation process](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages).
 
 
-1. Open up the command line and navigate to the `/tmp` directory, make and navigate into a new directory.
+1. Open up the command line and navigate to the `/tmp` directory, create a new directory and navigate to it.
 
-    $> `cd /tmp && mkdir radiotray && cd radiotray`
+  $> `cd /tmp && mkdir radiotray && cd radiotray`
 
 1. Download the tarball from the URL listed on [package's](https://aur.archlinux.org/packages/radiotray/) page.
 
-    $> `wget https://aur.archlinux.org/packages/ra/radiotray/radiotray.tar.gz`
+  $> `wget https://aur.archlinux.org/packages/ra/radiotray/radiotray.tar.gz`
 
 1. Extract the `PKGBUILD` file from the tarball to the new directory and navigate to it.
 
-    $> `tar -zxvf radiotray.tar.gz`
+  $> `tar -zxvf radiotray.tar.gz`
 
 
-    $> `cd radiotray`
+  $> `cd radiotray`
 
 1. Build the package and resolve the dependencies listed within the `PKGBUILD` file.
 
-    $> `makepkg -s`
+  $> `makepkg -s`
 
 1. Use the `pacman` package manager to install the built binary package, replacing the filename with the appropriate one.
 
-    $> `pacman -U radiotray-*-*-i686.pkg.tar.xz`
+  $> `pacman -U radiotray-*-*-i686.pkg.tar.xz`
 
 ###Fedora
 
@@ -118,6 +119,22 @@ To install, simply use the wonderful Portage package manager.
 
 ###Installing From Source
 
+If you'd like to keep up with the bleeding edge or your distribution doesn't ship with a Radio Tray package, your last only option may be to install it from source.
+
+1. Open up the command line and navigate to the `/tmp` directory, create a new directory and navigate to it.
+
+  $> `cd /tmp && mkdir radiotray && cd radiotray`
+
+1. Download the source code to your disk. 
+
+    * Either clone the project's mercurial repository
+
+        $> `hg clone https://bitbucket.org/carlmig/radio-tray`
+
+    * Or download the official source [tarball](http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz) from the project's homepage
+
+        $> `wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz`
+
 ##Contributing
 
-Radio Tray is a small project, but it can always use more help. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's [Transiflex page](http://www.transifex.net/projects/p/radiotray/) for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's [issues](https://bitbucket.org/carlmig/radio-tray/issues) page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on [BitBucket](http://bitbucket.org) using Mercurial as source control. Forking and contributing patches to the project should be no trouble. ***REPHRASE***
+Radio Tray is a small project, but it can always use more help. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's [Transiflex page](http://www.transifex.net/projects/p/radiotray/) for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's [issues](https://bitbucket.org/carlmig/radio-tray/issues) page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on [BitBucket](http://bitbucket.org) using Mercurial as source control. Forking and contributing patches should be no trouble. ***REPHRASE***
