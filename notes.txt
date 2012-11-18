@@ -8,6 +8,7 @@ Images & Config files
 /usr/share/radiotray/
 Default config and bookmarks xml, user interface files (glade) and icons
 
+Uninstall script
 
 
 Methodolgy:
