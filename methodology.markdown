@@ -19,6 +19,9 @@ I've dabbled with Arch Linux a tiny bit, so I have a bit of familiarity with the
 
 Furthermore, I actually downloaded the [package](https://aur.archlinux.org/packages/radiotray/) and looked through the PKGBUILD file. I was surprised to see that package doesn't contain a binary, but actually downloads the source from the Radiotray website and builds it on the machine.
 
+Arch Package:
+  <https://aur.archlinux.org/packages/radiotray/>
+
 ###Gentoo & Fedora
 
 I wanted to be comprehensive, so I included these section for kicks. A friend of mine is a Fedora devotee, so he showed me how to install Radiotray on his machine. Gentoo was just a matter of using the package management system. I relied on this guide: [A Portage Introduction](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=1).
@@ -28,3 +31,7 @@ Fedora Package:
 
 Portage Package
   <http://gentoo-portage.com/media-radio/radiotray>
+
+###Installing from source
+
+This section is an elaboration on the project's official [readme](https://aur.archlinux.org/packages/radiotray/).
