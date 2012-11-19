@@ -170,6 +170,8 @@ Radio Trays offers a simple and intuitive interface to modify Internet Radio sta
 
 Bookmarks can live at the root of the Radio Stations dialog or be grouped together. The previous image gives and example of the former (*NPR*) and and the latter (*CBC*). ***REPHRASE***
 
+After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
+
 ###Adding a New Station
 
 To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to.
@@ -183,9 +185,29 @@ To edit an existing bookmark, select it in the *Configure Radios* list and press
 ![Editing a radio station](editradio-cropped.png)
 
 
+
 ##Bookmarks.xml
 
-All radio stations are saved to `bookmarks.xml` which is located
+All radio stations are saved to `bookmarks.xml` which is located in `~/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. Moving or backing up an existing set of bookmarks is as simple as copying this file.
+
+Here is an example of a simple `bookmarks.xml` file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.
+
+    <bookmarks>
+      <group name="root">
+        <group name="CBC">
+          <bookmark name="Radio 2" url="http://playerservices.streamtheworld.com/pls/CBC_R2_TOR_H.pls"/>
+          <bookmark name="R3" url="http://playerservices.streamtheworld.com/pls/CBC_R3_WEB.pls"/>
+        </group>
+        <bookmark name="DI EuroDance" url="http://scfire-dtc-aa04.stream.aol.com:80/stream/1024"/>
+      </group>
+    </bookmarks>
+
+The entire document must be nested within the `<bookmarks> ... </bookmark>` tags for it to be valid XML. Bookmark entries are declared using the `<bookmark name="..." url="..." />` tag, which contains the station name and stream URL attributes. It must be self terminating.
+
+Bookmarks are grouped using the `<group name="..."> ... </group>` tags. Group names are declared using the name attributes. Any bookmarked within these tags will be grouped together. Every bookmark or group must be nested within the top `<group name="root">` which represnts the root of the bookmark list. Many groups can be nested within each other.
+
+To load any changes to `bookmarks.xml`, reload the file by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
+
 
 ##Technical Details and Design
 
@@ -207,7 +229,7 @@ GTK+ is a well supported project that allows Radio Tray to integrate well in man
 
 Gstreamer supports a wide variety of formats including a;sdfj;asd;fjka;sjlkdf  ***REPHRASE***
 
-[`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop:
+[`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop:
 
 ![Ubuntu Notification](libnotify-cropped.png)
 

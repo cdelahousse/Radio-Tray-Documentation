@@ -33,6 +33,11 @@ I was curious as to `setup.py` functionality so I read through the source and sa
 
 This section emulates pre-existing documentation. I rewrote it to create context for the bookmarks.xml section.
 
+##Bookmarks.xml
+
+The `bookmarks.xml` file is fairly straight forward. I figured it out by modifying it and playing around with the XML structure.
+
+
 ##Technical Details and Design
 
 On the project's homepage, some of the dependencies are listed, and the author mentions gstreamer and GTK, but there was no detail. I want this section to expand on his few lines.

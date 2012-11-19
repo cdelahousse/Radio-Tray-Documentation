@@ -33,4 +33,16 @@ Documentation regarding usage, the configuration files, the bookmarks file, inst
 
 While documenting this project, I found a lot of what I learned in class invaluable and very applicable. I'll relate the project to course material section by section.
 
+#### Distribution Install Processes
 The installation section explores what we learned in class about Package Management. We learned of how apt-get looks through lists of repositories for your desired application. I extended on this by showing the user how to add private repositories and their advantages. I also explored other package management solutions for different distributions.
+
+#### Installing From Source
+
+In class, we only briefly looked at how to install applications from source. What I found interesting about this section is I learned how Python packages modules as opposed to standard package management system.
+
+#### Program Components
+
+This section visits what we learned in class about how programs rely on different dependencies and libraries.
+
+
+
