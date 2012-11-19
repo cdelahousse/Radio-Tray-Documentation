@@ -2,13 +2,6 @@
 
 
 
-####Conventions:
-This document uses the following conventions:
-
-* "$> `command`" denotes a command line prompt and associated command
-* Any `word` in a mono spaced font is a technical keyword
-* References to source material are links
-
 ##Installation
 
 Whenever possible, please use a package manager to install Radio Tray. This will keep all dependencies in check and ensure a successful installation.
@@ -170,6 +163,29 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
 `setup.py` uses Python's `distutils` [library](http://docs.python.org/2/library/distutils.html) to install the application. This is the conventional way of distributing Python modules to many systems and handles the distribution specific installation details. For more information visit Python Doc's [Installing Python Modules](http://docs.python.org/2/install/index.html).
 
+##Adding and Editing Radio Stations
+Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*
+
+![Configuring Radio Stations](configradio-cropped.png)
+
+Bookmarks can live at the root of the Radio Stations dialog or be grouped together. The previous image gives and example of the former (*NPR*) and and the latter (*CBC*). ***REPHRASE***
+
+###Adding a New Station
+
+To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to.
+
+![Adding a radio station bookmark](addradio-cropped.png)
+
+###Editing an Existing Station
+
+To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required.
+
+![Editing a radio station](editradio-cropped.png)
+
+
+##Bookmarks.xml
+
+All radio stations are saved to `bookmarks.xml` which is located
 
 ##Technical Details and Design
 
@@ -189,7 +205,7 @@ GTK+ is a well supported project that allows Radio Tray to integrate well in man
 
 [Glade](http://glade.gnome.org/), Gnome's User Interface Designer, was used to build the bookmark and preferences pane. Glade uses XML files and the GTK+ library to dynamically generate these panes on the fly. Theses files are located in `/usr/share/radiotray`.
 
-Gstreamer supports a wide variety of formats including a;sdfj;asd;fjka;sjlkdf
+Gstreamer supports a wide variety of formats including a;sdfj;asd;fjka;sjlkdf  ***REPHRASE***
 
 [`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop:
 

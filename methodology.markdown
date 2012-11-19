@@ -29,6 +29,9 @@ This section is an elaboration on the project's official [readme](https://bitbuc
 
 I was curious as to `setup.py` functionality so I read through the source and saw that all of the projects details were fed to a `setup()` function which was a member of Python's `distutils` library. A few google searches later, I figured out that this was the standard way to [distribute python modules](http://docs.python.org/2/distutils/setupscript.html) and a natural way to install Radio Tray.
 
+##Adding and Editing Radio Stations
+
+This section emulates pre-existing documentation. I rewrote it to create context for the bookmarks.xml section.
 
 ##Technical Details and Design
 
