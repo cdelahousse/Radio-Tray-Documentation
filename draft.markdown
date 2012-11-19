@@ -181,7 +181,7 @@ GTK+ is a well supported project that allows Radio Tray to integrate well in man
 
 ![Awesome Window Manager](awesomewm-cropped.png)
 
-*Radio Tray in the Awesome WM*
+*Radio Tray in the Awesome Windows Manager*
 
 ![Xfce](xfce-cropped.png)
 
@@ -205,7 +205,13 @@ The following are a list of noteworthy directories where Radio Tray's components
 
 ####User Specific Directories
 
-*
+* `~/.local/share/radiotray`
+
+  Bookmark and configuration files specific to a user. Radio Tray will load these before looking at the default configuration directory below.
+
+* `~/.local/share/radiotray/plugins`
+
+  User specific plugins and configurations.
 
 ####System Directories
 
