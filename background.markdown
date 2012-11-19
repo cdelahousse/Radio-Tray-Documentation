@@ -25,7 +25,7 @@ Documentation regarding usage, the configuration files, the bookmarks file, inst
 
 
 
-###Is it worth documenting? Who's the audience?
+###Is it worth documenting? Who's the audience? How's This Useful?
 
 
 
@@ -33,16 +33,22 @@ Documentation regarding usage, the configuration files, the bookmarks file, inst
 
 While documenting this project, I found a lot of what I learned in class invaluable and very applicable. I'll relate the project to course material section by section.
 
-#### Distribution Install Processes
+####Distribution Install Processes
 The installation section explores what we learned in class about Package Management. We learned of how apt-get looks through lists of repositories for your desired application. I extended on this by showing the user how to add private repositories and their advantages. I also explored other package management solutions for different distributions.
 
-#### Installing From Source
+####Installing From Source
 
 In class, we only briefly looked at how to install applications from source. What I found interesting about this section is I learned how Python packages modules as opposed to standard package management system.
 
-#### Program Components
+####Bookmarks.xml
 
-This section visits what we learned in class about how programs rely on different dependencies and libraries.
+####Program Components and Installation Directories
 
+This section visits what we learned in class about how programs rely on different dependencies, libraries, and programs. For example, in one of the first labs, we learned that many Unixes use the Rsyslog logging deamon to write log files. This is the standard way of logging. The same can be said about Radio Tray's use of `libnotify` (via `python-notify`) for [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop notifications. Radio Tray uses convential methods and adheres to specifications.
 
+The course's labs had us downloading Debian packages and extracting their contents. This knowledge was invaluable in figuring out where Radio Tray installs to, and what it's files do. Furthermore, in class, you mentioned how conventions change depending on package management systems. This project uses both Debian package management conventions and python module distribution conventions. This was an interesting parallel to make.
+
+####Contributing
+
+The class is taught largely using open source software. The learning experience wouldn't be same if we used proprietary tools. Contributing is essential to keeping the OSS ecosystem thriving. This section will make it easy for anyone to join the project.
 
