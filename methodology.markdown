@@ -21,7 +21,7 @@ Furthermore, I actually downloaded the [package](https://aur.archlinux.org/packa
 
 ###Gentoo & Fedora
 
-I wanted to be comprehensive, so I included these section for kicks. A friend of mine is a Fedora devotee, so he showed me how to install Radio Tray on his machine. Gentoo was just a matter of using the package management system. I relied on this guide: [A Portage Introduction](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=1).
+I wanted to be comprehensive, so I included these sections for kicks. A friend of mine is a Fedora devotee, so he showed me how to install Radio Tray on his machine. Gentoo was just a matter of using the package management system. I relied on this guide: [A Portage Introduction](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=1).
 
 ###Installing From Source
 
@@ -31,16 +31,17 @@ I was curious as to `setup.py` functionality so I read through the source and sa
 
 ##Adding and Editing Radio Stations
 
-This section emulates pre-existing documentation. I rewrote it to create context for the bookmarks.xml section.
+
 
 ##Bookmarks.xml
 
-The `bookmarks.xml` file is fairly straight forward. I figured it out by modifying it and playing around with the XML structure.
+I discovered that the files was located in `~/.local/share/radiotray` in a forum [thread](https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051) 
 
+The `bookmarks.xml` file is fairly straight forward. I figured it out by modifying it and playing around with the XML structure.
 
 ##Technical Details and Design
 
-On the project's homepage, some of the dependencies are listed, and the author mentions gstreamer and GTK, but there was no detail. I want this section to expand on his few lines.
+On the project's homepage, some of the dependencies are listed, and the author mentions gstreamer and GTK, but there was no detail. I want this section to expand on those few lines.
 
 I figured out how the project was built by reading through the source code and googling the dependencies. The screenshots were taken on various computers with the [Shutter](http://shutter-project.org/) screenshot application. I was able to access the source code by extracting the contents from the homepage's official deb package using $> `dpkg -x`. 
 

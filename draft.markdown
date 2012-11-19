@@ -2,6 +2,43 @@
 
 
 
+##Using Radio Tray
+
+Using Radio Tray couldn't be simpler. All you have to do is click the Radio Tray icon on your system's App Indicator, System Tray or Panel.
+
+![Click systray icon](systray-cropped.png)
+
+A list of stations will appear. Open a group and select one. 
+
+![Select a station](stationselect-cropped.png)
+
+The stream will start playing and the current song will be listed at the top of the menu.
+
+![Song listing](playing-cropped.png)
+
+To stop playback, select *Turn Off "**Station Name**"* from the menu.
+
+##Adding and Editing Radio Stations
+Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*
+
+![Configuring Radio Stations](configradio-cropped.png)
+
+Bookmarks can live at the root of the Radio Stations dialog or be grouped together. The previous image gives and example of the former (*NPR*) and and the latter (*CBC*). ***REPHRASE***
+
+After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
+
+###Adding a New Station
+
+To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to.
+
+![Adding a radio station bookmark](addradio-cropped.png)
+
+###Editing an Existing Station
+
+To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required.
+
+![Editing a radio station](editradio-cropped.png)
+
 ##Installation
 
 Whenever possible, please use a package manager to install Radio Tray. This will keep all dependencies in check and ensure a successful installation.
@@ -162,28 +199,6 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
   $> `python setup.py install`
 
 `setup.py` uses Python's `distutils` [library](http://docs.python.org/2/library/distutils.html) to install the application. This is the conventional way of distributing Python modules to many systems and handles the distribution specific installation details. For more information visit Python Doc's [Installing Python Modules](http://docs.python.org/2/install/index.html).
-
-##Adding and Editing Radio Stations
-Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*
-
-![Configuring Radio Stations](configradio-cropped.png)
-
-Bookmarks can live at the root of the Radio Stations dialog or be grouped together. The previous image gives and example of the former (*NPR*) and and the latter (*CBC*). ***REPHRASE***
-
-After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
-
-###Adding a New Station
-
-To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to.
-
-![Adding a radio station bookmark](addradio-cropped.png)
-
-###Editing an Existing Station
-
-To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required.
-
-![Editing a radio station](editradio-cropped.png)
-
 
 
 ##Bookmarks.xml
