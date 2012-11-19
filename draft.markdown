@@ -53,12 +53,15 @@ The Radio Tray project maintains a binary package of the latest version. Install
 
   $> `wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray_0.7.3_all.deb`
 
-2. Install it using Ubuntu's package manager.
+1. Install it using Ubuntu's package manager.
 
   $> `sudo dpkg -i radiotray_0.7.3_all.deb`
 
 
-All the dependencies will taken care of by the package manager.
+1. Once installed, you must follow through with the missing dependencies. This can taken care of by the package manager.
+
+  $> `sudo apt-get install -f`
+
 Boom. You're done. 
 
 
@@ -98,7 +101,7 @@ The Fedora Package Database contains a Radio Tray [package](https://admin.fedora
 
   $> `su - 'yum install radiotray'`
 
-This will require you to enter your admin password
+This will require you to enter your admin password.
 
 As of this writing, the package (ver 0.7.1) is slightly dated.
 
@@ -119,7 +122,19 @@ To install, simply use the wonderful Portage package manager.
 
 ###Installing From Source
 
-If you'd like to keep up with the bleeding edge or your distribution doesn't ship with a Radio Tray package, your last only option may be to install it from source.
+If you'd like to keep up with the bleeding edge or your distribution doesn't ship with a Radio Tray package, your only option may be to install it from source.
+
+1. Before starting the installation process, make sure your system has all of Radio Tray's dependencies. Your distribution's package names may differ, but for Ubuntu and Debian, the following packages are required
+
+    * python
+    * python-central (>= 0.6.11)
+    * python-gst0.10 (>= 0.10)
+    * python-gtk2 (>= 2.16.0)
+    * python-lxml (>= 2.1.5)
+    * python-gobject (>= 2.18.0)
+    * python-notify (>= 0.1.1)
+    * python-dbus (>= 0.83.0)
+    * python-glade2
 
 1. Open up the command line and navigate to the `/tmp` directory, create a new directory and navigate to it.
 
@@ -131,9 +146,27 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
         $> `hg clone https://bitbucket.org/carlmig/radio-tray`
 
-    * Or download the official source [tarball](http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz) from the project's homepage
+    * Or download the official source [tarball](http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz) from the project's [homepage](http://radiotray.sourceforge.net/) and extract it.
 
         $> `wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz`
+
+        $> `tar -zxvf radiotray-0.7.3.tar.gz`
+
+1. Navigate to the source.
+
+  $> `cd radiotray-0.7.3`
+
+1. If you'd like to try Radio Tray before installing it to your system, run the executable.
+
+  $> `./radiotray`
+
+  If it doesn't work, you may need to change the file's permissions and make it executable.
+
+  $> `chmod +x ./radiotray`
+
+1. Finally, to install it to your machine, run the set up script.
+
+  $> `python setup.py install`
 
 ##Contributing
 

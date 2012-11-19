@@ -26,3 +26,8 @@ Pictures intalling using software center?
 Make a "how to contribute" section. 
 Translating is easy. Speak about the plugin infrastructure.
 Project hosted on bit bucket. Make an issue, etc.
+
+Troubleshooting?
+
+Not running? Have all dependencies?
+

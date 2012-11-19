@@ -34,4 +34,5 @@ Portage Package
 
 ###Installing from source
 
-This section is an elaboration on the project's official [readme](https://aur.archlinux.org/packages/radiotray/).
+This section is an elaboration on the project's official [readme](https://bitbucket.org/carlmig/radio-tray/src). To write the section, I worked through the steps myself and got the program running. I found the required dependencies for an installation on Ubuntu by downloading official package from the project's homepage and ran `dpkg -I radiotray_0.7.3_all.deb`.
+
