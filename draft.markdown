@@ -168,6 +168,85 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
   $> `python setup.py install`
 
+`setup.py` uses Python's `distutils` [library](http://docs.python.org/2/library/distutils.html) to install the application. This is the conventional way of distributing Python modules to many systems and handles the distribution specific installation details. For more information visit Python Doc's [Installing Python Modules](http://docs.python.org/2/install/index.html).
+
+
+##Technical Details and Design
+
+###Program components
+
+Radio Tray is written in the Python programming language using the [GTK+ GUI library](http://www.gtk.org/) and the [gstreamer](http://gstreamer.freedesktop.org/) multimedia framework.
+
+GTK+ is a well supported project that allows Radio Tray to integrate well in many desktop environments and window managers. Here are a few examples of the program in various GTK+ supported contexts:
+
+![Awesome Window Manager](awesomewm-cropped.png)
+
+*Radio Tray in the Awesome WM*
+
+![Xfce](xfce-cropped.png)
+
+*Radio Tray in the Xfce Desktop Environment*
+
+[Glade](http://glade.gnome.org/), Gnome's User Interface Designer, was used to build the bookmark and preferences pane. Glade uses XML files and the GTK+ library to dynamically generate these panes on the fly. Theses files are located in `/usr/share/radiotray`.
+
+Gstreamer supports a wide variety of formats including a;sdfj;asd;fjka;sjlkdf
+
+[`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop:
+
+![Ubuntu Notification](libnotify-cropped.png)
+
+
+
+The `python-central` dependency install the `distutils`. As discussed in the *Installing From Source* section, Radio Tray relies on the on it for packaging and distributing Python programs. 
+
+###Directories
+
+The following are a list of noteworthy directories where Radio Tray's components are installed. This section applies to an Ubuntu/Debian based system. Other distributions may differ.
+
+####User Specific Directories
+
+*
+
+####System Directories
+
+* `/usr/bin`
+
+  Stores the program's main executable.
+
+* `/usr/share/locale`
+
+  Radio Tray has been translated into [dozens of languages](http://www.transifex.net/projects/p/radiotray/) and stores its localization files here.
+
+* `/usr/share/pyshared/radiotray`
+
+  The bulk of Radio Tray's executable code lives here. This directory adheres to the Debian/Ubuntu's [Python policy](http://wiki.debian.org/Python/Policy) which states that shared Python modules should be stored in a child of `/usr/share/pyshared`. 
+
+* `/usr/share/radiotray`
+
+  Default bookmarks and configuration xml files, glade files and image resources.
+
+* `/usr/share/radiotray/plugins`
+
+  Default plugin directory
+
+* `/usr/share/applications`
+
+  Stores `radiotray.desktop`, so that Radio Tray appears in the program menus of [freedesktop.org](http://www.freedesktop.org/wiki/) compliant desktop environments.
+
+* `/usr/share/doc/radiotray` and `/usr/share/man/man1`
+
+  The documentation and man page directories. On FreeBSD, `setup.py` installs the man page to /usr/man/.
+
+* `/usr/share/pixmaps`
+
+  Radio Tray's icon is located here. This adhere's to [freedesktop.org](http://www.freedesktop.org/wiki/)'s [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html).
+
+
+* `/usr/lib/python2.7/dist-packages/radiotray/` and `/usr/lib/python2.6/dist-packages/radiotray/`
+
+  Stores Radio Tray's Python byte code.
+
+
 ##Contributing
 
 Radio Tray is a small project, but it can always use more help. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's [Transiflex page](http://www.transifex.net/projects/p/radiotray/) for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's [issues](https://bitbucket.org/carlmig/radio-tray/issues) page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on [BitBucket](http://bitbucket.org) using Mercurial as source control. Forking and contributing patches should be no trouble. ***REPHRASE***

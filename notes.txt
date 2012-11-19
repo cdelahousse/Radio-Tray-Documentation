@@ -20,12 +20,18 @@ Lookup dependencies
 gstreamer
 
 Plugins? Define it
+plugins.py -> extend to create plugin
+hello world?
 
 Pictures intalling using software center?
 
 Make a "how to contribute" section. 
 Translating is easy. Speak about the plugin infrastructure.
 Project hosted on bit bucket. Make an issue, etc.
+
+
+Tips and tricks:
+running it at startup
 
 Troubleshooting?
 
