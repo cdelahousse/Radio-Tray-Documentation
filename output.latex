@@ -1,0 +1,936 @@
+\section{Documentation Project}
+
+Christian Delahousse (ID 100725182)
+
+\textbf{Project Name:} Radio Tray
+
+\textbf{Project Site:} \url{http://radiotray.sourceforge.net/}
+
+I decided to have the Methodology section follow the Documentation
+Section. The document's ordering seems more natural this way.
+
+This document uses the following conventions:
+
+\begin{itemize}
+\item
+  ``\$\textgreater{} \texttt{command}'' denotes a command line prompt
+  and associated command.
+\item
+  Any \texttt{word} in a mono spaced font is a technical keyword.
+\item
+  References to source material are links within the document's body.
+\end{itemize}
+
+\section{Background Section}
+
+\subsubsection{Program Description}
+
+Radio Tray is a simple internet radio player that lives in the system
+tray or Application Indicator. It saves a list of your favourite
+stations for easy access. Its aim is to be as simple as possible,
+staying out of the way and doing one thing really well.
+
+On Windows, there is a similar program called \emph{Radio? Sure!} that
+resides in the tasktray. It mirrors a lot of Radio Tray's functionality
+but differs in that the Windows application actually gives you access to
+a user maintained database of Internet Radio stations.
+
+On Linux, Radio Tray is fairly unique. Some people would compare it to
+KDE's \href{http://amarok.kde.org/}{Amarok} or Novell's
+\href{http://banshee.fm/}{Banshee}, but these are more general media
+applications and are far more featured. They stray from Radio Tray's
+single purposeness. They aren't as well suited to managing and playing
+Internet Radio, despite being able to.
+
+\href{http://audacious-media-player.org/}{Audacious} shares Radio Tray's
+simplicity, but is geared to being an all around music player. It has
+the same support for Internet radio station, but doesn't do a very good
+job managing or bookmarking them. While Radio Tray is designed to stay
+hidden, Audacious is much more front and center, having the user
+interact with it more often to set playlists and move the window around.
+
+\subsubsection{Current State of Documentation}
+
+There exists very little official documentation for the project. The
+\href{http://manpages.ubuntu.com/manpages/precise/en/man1/radiotray.1.html}{man
+page} is just a description of the program and what it does. The source
+code's \href{https://bitbucket.org/carlmig/radio-tray/src}{README} only
+describes how to install it from source, but not in detail.
+
+There is not very much unofficial documentation either, and if it does
+exist, it is very Ubuntu centric. Webupd8 has a
+\href{http://www.webupd8.org/2011/04/how-to-enable-ubuntu-appindicator-for.html}{tutorial}
+on how to install the application from a PPA and how to change one
+specific setting in the configuration file. The only noteworthy document
+I found was a French language
+\href{http://doc.ubuntu-fr.org/radiotray}{guide} on a French community
+website that touched lightly on the \texttt{bookmarks.xml} file.
+
+Documentation regarding usage, the configuration file, the bookmarks
+file, installation on other distributions, installation directories,
+program design, technical details and troubleshooting is severely
+lacking.
+
+\subsubsection{What Will I Document? Is It Worth Documenting? Who's the
+Audience? How's This Useful?}
+
+I will documenting the aspects of the program that would benefit from
+it. I will be documenting general usage and installation methods across
+multiple platforms and from source. There are two important
+configuration files, \texttt{bookmarks.xml} and \texttt{config.xml},
+that need documenting. Lastly, I will explore the program's design and
+dependencies, and how installs itself in the filesystem.
+
+I believe this is worth documenting because these aspects of the program
+haven't really been documented. Documentation relating to the
+configurations files would be essential for any heavy users or
+sysadmins. They could, for example, write a program to convert the
+\texttt{bookmarks.xml} file to and from other formats for other players.
+Documenting Radio Tray's design and dependencies would help any new
+developer hoping to contribute to the project. New users will benefit
+the most. Documenting basic usage will allow people to evaluate the
+program or get up to speed more quickly.
+
+\subsubsection{Tools Used}
+
+This document was composed in \href{http://www.vim.org/}{Vim}. I used
+\href{http://johnmacfarlane.net/pandoc/}{Pandoc} to convert from the
+Markdown format to Latex and then to PDF. For screenshots, I used the
+\href{http://shutter-project.org/}{Shutter} project.
+
+\subsubsection{How does this relate to course material?}
+
+While documenting this project, I found a lot of what I learned in class
+invaluable and very applicable. I'll relate the project to course
+material section by section.
+
+\paragraph{Distribution Install Processes}
+
+The installation section explores what we learned in class about Package
+Management. We learned how apt-get looks through lists of repositories
+for your desired application. I elaborated on this idea by showing the
+user how to add private repositories and displaying their advantages. I
+also explored other package management solutions for different
+distributions.
+
+\paragraph{Installing From Source}
+
+In class, we only briefly looked at how to install applications from
+source. What I found interesting about this section is I learned how
+Python packages modules as opposed to standard package management
+system.
+
+\paragraph{Bookmarks.xml and config.xml}
+
+Modifying configuration files is essential to proper sysadmining.
+
+\paragraph{Program Components and Installation Directories}
+
+This section visits what we learned in class about how programs rely on
+different dependencies, libraries and programs. For example, in one of
+the first labs, we learned that many Unixes use the Rsyslog logging
+daemon to write log files. This is the standard way of logging. The same
+can be said about Radio Tray's use of \texttt{libnotify} (via
+\texttt{python-notify}) for
+\href{http://www.freedesktop.org/wiki/}{freedesktop.org} Desktop
+notifications. Radio Tray uses convential methods and adheres to
+specifications.
+
+The course labs had us downloading Debian packages and extracting their
+contents. This knowledge was invaluable in figuring out where Radio Tray
+installs to, and what it's files do. Furthermore, in class, you
+mentioned how conventions change depending on package management
+systems. This project uses both Debian package management conventions
+and python module distribution conventions. This was an interesting
+parallel to make.
+
+\paragraph{Contributing}
+
+The class is taught largely using open source software. The learning
+experience wouldn't be same if we used proprietary tools. Contributing
+is essential to keeping the OSS ecosystem thriving. This section will
+make it easy for anyone to join the project.
+
+\section{Documentation Section}
+
+\subsection{Using Radio Tray}
+
+Using Radio Tray couldn't be simpler. All you have to do is click the
+Radio Tray icon on your system's Application Indicator or System Tray.
+See \emph{figure 1.}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{systray-cropped.png}
+\caption{Click systray icon}
+\end{figure}
+
+A list of stations will appear. Open a group and select one. See
+\emph{figure 2.}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{stationselect-cropped.png}
+\caption{Select a station}
+\end{figure}
+
+The stream will start playing and the current song will be listed at the
+top of the menu. See \emph{figure 3}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{playing-cropped.png}
+\caption{Song listing}
+\end{figure}
+
+To stop playback, select \emph{Turn Off ``\textbf{Station Name}''} from
+the menu.
+
+\subsection{Adding and Editing Radio Stations}
+
+Radio Trays offers a simple and intuitive interface to modify Internet
+Radio station bookmarks.To access it, simply open Radio Tray and select
+\emph{Preferences -\textgreater{} Configure Radios \ldots{}}. See
+\emph{figure 4}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{configradio-cropped.png}
+\caption{Configuring Radio Stations}
+\end{figure}
+
+Bookmarks can live at the root of the \emph{Radio Stations} dialog or be
+grouped together. \emph{Figure 4} gives an example of the former
+(\emph{NPR}) and the latter (\emph{CBC}).
+
+After modifying bookmarks, reload them by selecting \emph{Preferences
+-\textgreater{} Reload Bookmarks} from Radio Tray's main menu.
+
+\subsubsection{Adding a New Station}
+
+To save a new station, press the \emph{Add} button in the
+\emph{Configure Radios} dialog. The \emph{Add new station} dialog will
+appear. Enter the station's name, the stream's URL and either select the
+root or a group it should belong to. See \emph{figure 5}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{addradio-cropped.png}
+\caption{Adding a radio station bookmark}
+\end{figure}
+
+\subsubsection{Editing an Existing Station}
+
+To edit an existing bookmark, select it in the \emph{Configure Radios}
+list and press the \emph{Edit} button. An edit dialog will appear.
+Change fields as required. See \emph{figure 6}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{editradio-cropped.png}
+\caption{Editing a radio station}
+\end{figure}
+
+\subsection{Installation}
+
+This section will cover installing Radio Tray on a variety of
+distribution. Whenever possible, please use a package manager to install
+it. This will keep all dependencies in check and ensure a successful
+installation.
+
+\subsubsection{Ubuntu/Linux Mint}
+
+\paragraph{Using the Ubuntu repositories}
+
+A Radio Tray
+\href{http://packages.ubuntu.com/quantal/radiotray}{package} is
+maintained in Ubuntu's Universe repository along with other community
+maintained software. Simply use \texttt{apt-get} to install it.
+
+\$\textgreater{} \texttt{sudo apt-get update}
+
+\$\textgreater{} \texttt{sudo apt-get install radio-tray}
+
+Unfortunately, this package is always a few versions behind. As of this
+writing, version 0.7.2 is in the Ubuntu Quantal Quetzal (12.10)
+repositories and version 0.6.4.1 in the Precise Pangolin (12.04)
+repositories, yet the latest stable version is 0.7.3.
+
+\paragraph{Using a PPA}
+
+Fortunately, the wonderful folks at
+\href{http://estobuntu.org/estobuntu-english}{Estobuntu} (an Estonian
+derivative of Ubuntu), have maintained a
+\href{https://help.launchpad.net/Packaging/PPA}{personal package
+archive} (PPA) with the
+\href{https://launchpad.net/~estobuntu/+archive/ppa/+sourcepub/2623076/+listing-archive-extra}{current
+version of Radio Tray} for Ubuntu 12.04. A PPA is a privately maintained
+set of packages openly available to the public. Simply add it to your
+list of repositories and you'll always be up to date.
+
+\$\textgreater{} \texttt{sudo add-apt-repository ppa:estobuntu/ppa}
+
+\$\textgreater{} \texttt{sudo apt-get update}
+
+\$\textgreater{} \texttt{sudo apt-get install radiotray}
+
+If \texttt{add-apt-repository} fails, simply install it using the
+\texttt{python-software-properties} package.
+
+\$\textgreater{}
+\texttt{sudo apt-get install python-software-properties}
+
+\paragraph{Using the official binary package}
+
+The Radio Tray project maintains a binary package of the latest version.
+Installing the program from it is as follows.
+
+\begin{enumerate}[1.]
+\item
+  Navigate to the \texttt{/tmp} directory. Download the deb file.
+\end{enumerate}
+
+\$\textgreater{} \texttt{cd /tmp}
+
+\$\textgreater{}
+\texttt{wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray\_0.7.3\_all.deb}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Install it using Ubuntu's package manager.
+\end{enumerate}
+
+\$\textgreater{} \texttt{sudo dpkg -i radiotray\_0.7.3\_all.deb}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Once installed, you must follow through with the missing dependencies.
+  This can taken care of by the package manager.
+\end{enumerate}
+
+\$\textgreater{} \texttt{sudo apt-get install -f}
+
+Boom. You're done.
+
+\subsubsection{Arch Linux}
+
+There exists a
+\href{https://aur.archlinux.org/packages/radiotray/}{package} in the
+\href{https://wiki.archlinux.org/index.php/AUR\_User\_Guidelines}{Arch
+User Repository} (AUR) that contains a
+\href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD} file. The
+package does not contain binary. Instead, it will assist you in
+downloading and building the source from Radio Tray's site.
+
+Just follow the typical Arch Linux
+\href{https://wiki.archlinux.org/index.php/Arch\_User\_Repository\#Installing\_packages}{installation
+process}.
+
+\begin{enumerate}[1.]
+\item
+  Open up the command line and navigate to the \texttt{/tmp} directory,
+  create a new directory and navigate to it.
+\end{enumerate}
+
+\$\textgreater{} \texttt{cd /tmp \&\& mkdir radiotray \&\& cd radiotray}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Download the tarball from the URL listed on
+  \href{https://aur.archlinux.org/packages/radiotray/}{package's} page.
+\end{enumerate}
+
+\$\textgreater{}
+\texttt{wget https://aur.archlinux.org/packages/ra/radiotray/radiotray.tar.gz}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Extract the \texttt{PKGBUILD} file from the tarball to the new
+  directory and navigate to it.
+\end{enumerate}
+
+\$\textgreater{} \texttt{tar -zxvf radiotray.tar.gz}
+
+\$\textgreater{} \texttt{cd radiotray}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{3}
+\item
+  Build the package which will resolve the required dependencies listed
+  within the \texttt{PKGBUILD} file.
+\end{enumerate}
+
+\$\textgreater{} \texttt{makepkg -s}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{4}
+\item
+  Use the \texttt{pacman} package manager to install the built binary
+  package, replacing the filename with the appropriate one.
+\end{enumerate}
+
+\$\textgreater{} \texttt{pacman -U radiotray-*-*-i686.pkg.tar.xz}
+
+\subsubsection{Fedora}
+
+The Fedora Package Database contains a Radio Tray
+\href{https://admin.fedoraproject.org/pkgdb/acls/name/radiotray}{package}.
+
+\$\textgreater{} \texttt{su - 'yum install radiotray'}
+
+This will require you to enter your admin password.
+
+As of this writing, the package (ver 0.7.1) is slightly dated.
+
+\subsubsection{Gentoo}
+
+The Portage database contains a Radio Tray
+\href{http://gentoo-portage.com/media-radio/radiotray}{package}.
+
+To install, simply use the wonderful Portage package manager.
+
+\begin{enumerate}[1.]
+\item
+  Update the Portage tree.
+\end{enumerate}
+
+\$\textgreater{} \texttt{emerge -{}-sync}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item
+  Use emerge to install it.
+\end{enumerate}
+
+\$\textgreater{} \texttt{emerge radiotray}
+
+\subsubsection{Installing From Source}
+
+If you'd like to keep up with the bleeding edge or your distribution
+doesn't ship with a Radio Tray package, your only option may be to
+install it from source.
+
+\begin{enumerate}[1.]
+\item
+  Before starting the installation process, make sure your system has
+  all of Radio Tray's dependencies. Your distribution's package names
+  may differ, but for Ubuntu and Debian, the following packages are
+  required
+
+  \begin{itemize}
+  \item
+    python
+  \item
+    python-central (\textgreater{}= 0.6.11)
+  \item
+    python-gst0.10 (\textgreater{}= 0.10)
+  \item
+    python-gtk2 (\textgreater{}= 2.16.0)
+  \item
+    python-lxml (\textgreater{}= 2.1.5)
+  \item
+    python-gobject (\textgreater{}= 2.18.0)
+  \item
+    python-notify (\textgreater{}= 0.1.1)
+  \item
+    python-dbus (\textgreater{}= 0.83.0)
+  \item
+    python-glade2
+  \end{itemize}
+\item
+  Open up the command line and navigate to the \texttt{/tmp} directory,
+  create a new directory and navigate to it.
+\end{enumerate}
+
+\$\textgreater{} \texttt{cd /tmp \&\& mkdir radiotray \&\& cd radiotray}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{2}
+\item
+  Download the source code to your disk.
+
+  \begin{itemize}
+  \item
+    Either clone the project's mercurial repository
+
+    \$\textgreater{}
+    \texttt{hg clone https://bitbucket.org/carlmig/radio-tray}
+  \item
+    Or download the official source
+    \href{http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz}{tarball}
+    from the project's
+    \href{http://radiotray.sourceforge.net/}{homepage} and extract it.
+
+    \$\textgreater{}
+    \texttt{wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz}
+
+    \$\textgreater{} \texttt{tar -zxvf radiotray-0.7.3.tar.gz}
+  \end{itemize}
+\item
+  Navigate to the source.
+\end{enumerate}
+
+\$\textgreater{} \texttt{cd radiotray-0.7.3}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{4}
+\item
+  If you'd like to try Radio Tray before installing it to your system,
+  run the executable.
+\end{enumerate}
+
+\$\textgreater{} \texttt{./radiotray}
+
+If it doesn't work, you may need to change the file's permissions and
+make it executable.
+
+\$\textgreater{} \texttt{chmod +x ./radiotray}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{5}
+\item
+  Finally, to install it to your machine, run the set up script.
+\end{enumerate}
+
+\$\textgreater{} \texttt{python setup.py install}
+
+\texttt{setup.py} uses Python's \texttt{distutils}
+\href{http://docs.python.org/2/library/distutils.html}{library} to
+install the application. This is the conventional way of distributing
+Python modules to many systems and handles the distribution specific
+installation details. For more information visit Python Doc's
+\href{http://docs.python.org/2/install/index.html}{Installing Python
+Modules}.
+
+\subsection{Bookmarks.xml}
+
+All radio stations are saved to \texttt{bookmarks.xml} which is located
+in \texttt{\textasciitilde{}/.local/share/radiotray}. It is an XML file
+that uses a nested hierarchy to represent groups and stations. If a
+bookmarks file isn't at that location, the default
+\texttt{bookmarks.xml} will be copied over. Moving or backing up an
+existing set of bookmarks is as simple as copying this file.
+
+Here is an example of a simple \texttt{bookmarks.xml} file. It describes
+three radio stations. Two that are grouped together and one that will be
+located at the root of the stations list.
+
+\begin{verbatim}
+<bookmarks>
+  <group name="root">
+    <group name="CBC">
+      <bookmark name="Radio 2" 
+          url="http://playerservices.streamtheworld.com/pls/CBC_R2_TOR_H.pls"/>
+      <bookmark name="R3"
+          url="http://playerservices.streamtheworld.com/pls/CBC_R3_WEB.pls"/>
+    </group>
+    <bookmark name="DI EuroDance"
+          url="http://scfire-dtc-aa04.stream.aol.com:80/stream/1024"/>
+  </group>
+</bookmarks>
+\end{verbatim}
+
+The entire document must be nested within the
+\texttt{\textless{}bookmarks\textgreater{} ... \textless{}/bookmark\textgreater{}}
+tags for it to be valid XML. Bookmark entries are declared using the
+\texttt{\textless{}bookmark name="..." url="..." /\textgreater{}} tag,
+which contains the station name and stream URL attributes. It must be
+self terminating.
+
+Bookmarks are grouped using the
+\texttt{\textless{}group name="..."\textgreater{} ... \textless{}/group\textgreater{}}
+tags. Group names are declared using the name attributes. Any bookmarked
+within these tags will be grouped together. Every bookmark or group must
+be nested within the top
+\texttt{\textless{}group name="root"\textgreater{}} which represents the
+root of the bookmark list. Many groups can be nested within each other.
+
+To load any changes to \texttt{bookmarks.xml}, reload the file by
+selecting \emph{Preferences -\textgreater{} Reload Bookmarks} from Radio
+Tray's main menu.
+
+\subsection{Config.xml}
+
+Radio Tray's configuration state is saved to \texttt{config.xml} which
+is located in \texttt{\textasciitilde{}/.local/share/radiotray/}. If one
+isn't in that folder, the default configuration file will be copied
+over.
+
+\begin{verbatim}
+<config>
+  <option name="volume_increment" value="0.05"/>
+  <option name="volume_level" value="1.0"/>
+  <option name="url_timeout" value="100"/>
+  <option name="enable_application_indicator_support" value="false"/>
+  <!-- valid options are 'appindicator', 'systray' and 'chooser' -->
+  <option name="gui_engine" value="appindicator"/>
+  <option name="active_plugins">
+    <item>Notifications</item>
+  </option>
+  <option name="buffer_size" value="164000"/>
+</config>
+\end{verbatim}
+
+Every option is housed in an
+\texttt{\textless{}option name="..." value="..."\textgreater{}} tag with
+a key/value (name/value) pair.
+
+\begin{itemize}
+\item
+  \texttt{volume\_increment} expects an float (0 \textless{} x
+  \textless{} 1). Default: 0.05
+\end{itemize}
+
+Determines the step size at which the GStreamer audio player will raise
+or lower volume.
+
+\begin{itemize}
+\item
+  \texttt{volume\_level} expects a float (0 \textless{} = x \textless{}
+  = 1). Default: 1.0
+\end{itemize}
+
+Determines the current volume for the GStreamer audio player.
+
+\begin{itemize}
+\item
+  \texttt{url\_timeout} expects an integer (0 \textless{} = x). Default:
+  100
+\end{itemize}
+
+The amount of time in seconds until the connection to a stream times
+out.
+
+\begin{itemize}
+\item
+  \texttt{enable\_application\_indicator\_support} expect a boolean.
+  Default: ``false''
+\item
+  \texttt{gui\_engine} expects a string. Default: ``chooser''
+\end{itemize}
+
+This settings determines where and how the Radio Tray icon and menu will
+be displayed. There are three options: \texttt{chooser},
+\texttt{appindicator} and \texttt{systray}. \texttt{chooser} displays a
+dialog box that lets you choose between the other two options and saves
+the result. \texttt{systray} will have the icon appear on the far right
+panel of the task area. This is where system features like volume
+control and power management are housed. \texttt{appindicator} will have
+the icon appear right before that, in the Application Indicator area.
+This are where applications who wish to have part of their interface on
+the panel is located. For more information on the differences, visit the
+\href{https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators}{Application
+Indicators Ubuntu Page}.
+
+It is suggested that you select \texttt{appindicator} because the menu
+will be nicer.
+
+\begin{itemize}
+\item
+  \texttt{active\_plugins}
+\end{itemize}
+
+Determines which plugins are active. Set the plugin's name to activate
+it.
+
+\begin{itemize}
+\item
+  \texttt{buffer\_size} expects an integer (0 \textless{} x). Default:
+  164000
+\end{itemize}
+
+Sets gstreamer's buffer size in bytes. A larger size will ensure
+smoother playback but consume more memory.
+
+\subsection{Technical Details and Design}
+
+\subsubsection{Program components}
+
+Radio Tray is written in the Python programming language using the
+\href{http://www.gtk.org/}{GTK+ GUI library} and the
+\href{http://gstreamer.freedesktop.org/}{gstreamer} multimedia
+framework.
+
+GTK+ is a well supported project that allows Radio Tray to integrate
+well in many desktop environments and window managers. Here are a few
+examples of the program in various GTK+ supported contexts:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{awesomewm-cropped.png}
+\caption{Awesome Window Manager}
+\end{figure}
+
+Radio Tray in the \emph{Awesome Windows Manager}. See \emph{figure 7}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{xfce-cropped.png}
+\caption{Xfce}
+\end{figure}
+
+Radio Tray in the \emph{Xfce Desktop Environment}. See \emph{figure 8}.
+
+\href{http://glade.gnome.org/}{Glade}, Gnome's User Interface Designer,
+was used to build the bookmark and preferences pane. Glade uses XML
+files and the GTK+ library to dynamically generate these panes on the
+fly. Theses files are located in \texttt{/usr/share/radiotray}.
+
+Gstreamer supports a wide variety of formats including
+a;sdfj;asd;fjka;sjlkdf \textbf{\emph{REPHRASE}}
+
+\href{http://packages.ubuntu.com/quantal/python-notify}{\texttt{python-notify}}
+is a set of Python bindings for
+\href{http://developer-next.gnome.org/libnotify/}{libnotify}, a part of
+the Gnome library. It sends messages to a desktop notification deamon
+using D-Bus for interprocess communication and adheres to the
+\href{http://www.freedesktop.org/wiki/}{freedesktop.org} Desktop
+Notification
+\href{http://developer.gnome.org/notification-spec/}{specification}. On
+Ubuntu, these notifications manifest themselves as bubbles appearing in
+top right corner of the desktop. See \emph{figure 9}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{libnotify-cropped.png}
+\caption{Ubuntu Notification}
+\end{figure}
+
+The \texttt{python-central} dependency install the \texttt{distutils}.
+As discussed in the \emph{Installing From Source} section, Radio Tray
+relies on the on it for packaging and distributing Python programs.
+
+\subsubsection{Directories}
+
+The following are a list of noteworthy directories where Radio Tray's
+components are installed. This section applies to an Ubuntu/Debian based
+system. Other distributions may differ.
+
+\paragraph{User Specific Directories}
+
+\begin{itemize}
+\item
+  \texttt{\textasciitilde{}/.local/share/radiotray}
+\end{itemize}
+
+Bookmark and configuration files specific to a user. Radio Tray will
+load these before looking at the default configuration directory below.
+
+\begin{itemize}
+\item
+  \texttt{\textasciitilde{}/.local/share/radiotray/plugins}
+\end{itemize}
+
+User specific plug ins and their configurations.
+
+\paragraph{System Directories}
+
+\begin{itemize}
+\item
+  \texttt{/usr/bin}
+\end{itemize}
+
+Stores the program's main executable.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/locale}
+\end{itemize}
+
+Radio Tray has been translated into
+\href{http://www.transifex.net/projects/p/radiotray/}{dozens of
+languages} and stores its localization files here.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/pyshared/radiotray}
+\end{itemize}
+
+The bulk of Radio Tray's executable code lives here. This directory
+adheres to the Debian/Ubuntu's
+\href{http://wiki.debian.org/Python/Policy}{Python policy} which states
+that shared Python modules should be stored in a child of
+\texttt{/usr/share/pyshared}.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/radiotray}
+\end{itemize}
+
+Default bookmarks and configuration xml files, glade files and image
+resources.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/radiotray/plugins}
+\end{itemize}
+
+Default plugin directory
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/applications}
+\end{itemize}
+
+Stores \texttt{radiotray.desktop}, so that Radio Tray appears in the
+program menus of
+\href{http://www.freedesktop.org/wiki/}{freedesktop.org} compliant
+desktop environments.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/doc/radiotray} and \texttt{/usr/share/man/man1}
+\end{itemize}
+
+The documentation and man page directories. On FreeBSD,
+\texttt{setup.py} installs the man page to /usr/man/.
+
+\begin{itemize}
+\item
+  \texttt{/usr/share/pixmaps}
+\end{itemize}
+
+Radio Tray's icon is located here. This adhere's to
+\href{http://www.freedesktop.org/wiki/}{freedesktop.org}'s
+\href{http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html}{Icon
+Theme Specification}.
+
+\begin{itemize}
+\item
+  \texttt{/usr/lib/python2.7/dist-packages/radiotray/} and
+  \texttt{/usr/lib/python2.6/dist-packages/radiotray/}
+\end{itemize}
+
+Stores Radio Tray's Python byte code.
+
+\subsection{Contributing}
+
+Radio Tray is a small project, but it can always use more help. Here are
+a few suggestions. The newest version comes with a well defined plug-in
+framework. Try implementing a new feature. If you'd like to to translate
+the program into your native language, visit Radio Tray's
+\href{http://www.transifex.net/projects/p/radiotray/}{Transiflex page}
+for instructions on how to do so. Lastly, if you find a bug or would
+like to implement a new feature, please visit the project's
+\href{https://bitbucket.org/carlmig/radio-tray/issues}{issues} page
+where you can create bug reports or give suggestions. The best way to
+contribute is to read through the open issues and implement bug fixes.
+The project is hosted on \href{http://bitbucket.org}{BitBucket} using
+Mercurial as source control. Forking and contributing patches should be
+no trouble.
+
+\section{Methodology Section}
+
+Generally, when starting any new documentation section, I would look to
+see what currently existed. There isn't very much, so I'd move on to
+other strategies. The next step would be to either dive into the source
+or look through the official .deb package. I'd uncover keywords, folders
+or commands of interest and find their documentation. These were
+typically more general components such as part of a Python library. I'd
+see how that part would fit with the entire whole.
+
+My scope requirements of the documentation task changed as I learned
+more about the project. My perception of project's complexity was that
+it was far less complex. I believed I wouldn't have enough to document.
+I was going to include a troubleshooting section and a few tips and
+tricks. Fortunately, the project was elaborate enough to have a lot to
+write about.
+
+\textbf{The following are specific methods used to write each
+documentation section:}
+
+\subsection{Installation}
+
+\subsubsection{Ubuntu}
+
+I've installed Radio Tray countless times on various Ubuntu
+installations. I got the idea to search for a PPA because it the first
+thing I look for when installing new software because Ubuntu
+repositories are typically out of date. I found the PPA while searching
+though \href{http://launchpad.net}{Launchpad}, Canonical's Software
+Collaboration tool. To install from the developer provided .deb file, I
+just used the knowledge gained from our labs. \texttt{dpkg} is great!
+
+This section was partly inspired by a Webupd8
+\href{http://www.webupd8.org/2011/04/how-to-enable-ubuntu-appindicator-for.html}{article}.
+
+\subsubsection{Arch Linux}
+
+I've dabbled with Arch Linux, so I have a bit of familiarity with the
+community software installation process. Most of what I wrote was based
+on prior knowledge and their
+\href{https://wiki.archlinux.org/index.php/AUR\_User\_Guidelines}{software
+installation guide}. I took their general guidelines and applied them to
+a Radio Tray install.
+
+Furthermore, I downloaded the
+\href{https://aur.archlinux.org/packages/radiotray/}{package} and looked
+through the PKGBUILD file. I was surprised to see that package doesn't
+contain a binary, but actually downloads the source from the Radio Tray
+website and builds a package on the machine.
+
+\subsubsection{Gentoo \& Fedora}
+
+I wanted to be comprehensive, so I included these sections. A friend of
+mine is a Fedora devotee, so he showed me how to install Radio Tray on
+his machine. Gentoo was just a matter of using the package management
+system. I relied on this guide:
+\href{http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2\&chap=1}{A
+Portage Introduction}.
+
+\subsubsection{Installing From Source}
+
+This section is an elaboration on the project's official
+\href{https://bitbucket.org/carlmig/radio-tray/src}{readme}. To write
+the section, I worked through the steps myself and got the program
+running. I found the required dependencies for an installation on Ubuntu
+by downloading official package from the project's homepage and ran
+\texttt{dpkg -I radiotray\_0.7.3\_all.deb}.
+
+I was curious as to \texttt{setup.py}'s functionality so I read through
+the source and saw that all of the projects details were fed to a
+\texttt{setup()} function which was a member of Python's
+\texttt{distutils} library. A few google searches later, I figured out
+that this was the standard way to
+\href{http://docs.python.org/2/distutils/setupscript.html}{distribute
+python modules} and a natural way to install Radio Tray.
+
+\subsection{Bookmarks.xml}
+
+I discovered that the files was located in
+\texttt{\textasciitilde{}/.local/share/radiotray} in a forum
+\href{https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051}{thread}.
+The \texttt{bookmarks.xml} file is fairly straight forward. I documented
+it by playing around with the XML and restarting the program.
+
+\subsection{Config.xml}
+
+I cloned the project's repository to my harddrive and \texttt{grep}ed
+the names of every option. This allowed me to follow the code and get an
+idea of every setting's purpose.
+
+The timeout setting was a call to the Python \texttt{urllib2} library's
+\href{http://docs.python.org/2/library/urllib2.html}{\texttt{open()}}
+method. To figure out which units were used for \texttt{buffer\_size}, I
+had to look up the Gstreamer's
+\href{http://pygstdocs.berlios.de/pygst-reference/class-gstbuffer.html}{Python
+bindings}.
+
+\subsection{Technical Details, Design and Directories}
+
+On the project's homepage, some of the dependencies are listed, and the
+author mentions gstreamer and GTK, but there was no detail. I want this
+section to expand on those few lines.
+
+I figured out how the project was built by reading through the source
+code and googling the dependencies. The screenshots were taken on
+various computers with the \href{http://shutter-project.org/}{Shutter}
+screenshot application. I was able to access the source code by
+extracting the contents from the homepage's official deb package using
+\$\textgreater{} \texttt{dpkg -x}. The directories listed in the
+documentation reflect those found in the extracted deb package and those
+listed at the bottom of \texttt{setup.py}.
