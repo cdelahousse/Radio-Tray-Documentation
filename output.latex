@@ -96,7 +96,9 @@ program or get up to speed more quickly.
 This document was composed in \href{http://www.vim.org/}{Vim}. I used
 \href{http://johnmacfarlane.net/pandoc/}{Pandoc} to convert from the
 Markdown format to Latex and then to PDF. For screenshots, I used the
-\href{http://shutter-project.org/}{Shutter} project.
+\href{http://shutter-project.org/}{Shutter} project. Everything is
+hosted on a GitHub
+\href{https://github.com/cdelahousse/Radio-Tray-Documentation}{repository}.
 
 \subsubsection{How does this relate to course material?}
 
@@ -307,7 +309,7 @@ Installing the program from it is as follows.
 \setcounter{enumi}{2}
 \item
   Once installed, you must follow through with the missing dependencies.
-  This can taken care of by the package manager.
+  This can be taken care of by the package manager.
 \end{enumerate}
 
 \$\textgreater{} \texttt{sudo apt-get install -f}
@@ -680,8 +682,11 @@ was used to build the bookmark and preferences pane. Glade uses XML
 files and the GTK+ library to dynamically generate these panes on the
 fly. Theses files are located in \texttt{/usr/share/radiotray}.
 
-Gstreamer supports a wide variety of formats including
-a;sdfj;asd;fjka;sjlkdf \textbf{\emph{REPHRASE}}
+\href{http://gstreamer.freedesktop.org/features/}{Gstreamer} supports a
+wide variety of formats including \texttt{asf}, \texttt{avi},
+\texttt{ogg} and others. It allows Radio Tray to use the \texttt{pls},
+\texttt{m3u}, \texttt{asx}, \texttt{wax} and \texttt{wvx} playlist
+formats.
 
 \href{http://packages.ubuntu.com/quantal/python-notify}{\texttt{python-notify}}
 is a set of Python bindings for

@@ -88,7 +88,7 @@ The Radio Tray project maintains a binary package of the latest version. Install
   $> `sudo dpkg -i radiotray_0.7.3_all.deb`
 
 
-3. Once installed, you must follow through with the missing dependencies. This can taken care of by the package manager.
+3. Once installed, you must follow through with the missing dependencies. This can be taken care of by the package manager.
 
   $> `sudo apt-get install -f`
 
@@ -203,7 +203,7 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
 ##Bookmarks.xml
 
-All radio stations are saved to `bookmarks.xml` which is located in `~/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default `bookmarks.xml` will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.
+All radio stations are saved to `bookmarks.xml` which is located in `home/user/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default `bookmarks.xml` will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.
 
 Here is an example of a simple `bookmarks.xml` file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.
 
@@ -228,7 +228,7 @@ To load any changes to `bookmarks.xml`, reload the file by selecting *Preference
 
 ##Config.xml
 
-Radio Tray's configuration state is saved to `config.xml` which is located in `~/.local/share/radiotray/`. If one isn't in that folder, the default configuration file will be copied over.
+Radio Tray's configuration state is saved to `config.xml` which is located in `/home/user/.local/share/radiotray/`. If one isn't in that folder, the default configuration file will be copied over.
 
     <config>
       <option name="volume_increment" value="0.05"/>
@@ -292,7 +292,7 @@ Radio Tray in the *Xfce Desktop Environment*. See *figure 8*.
 
 [Glade](http://glade.gnome.org/), Gnome's User Interface Designer, was used to build the bookmark and preferences pane. Glade uses XML files and the GTK+ library to dynamically generate these panes on the fly. Theses files are located in `/usr/share/radiotray`.
 
-Gstreamer supports a wide variety of formats including a;sdfj;asd;fjka;sjlkdf  ***REPHRASE***
+[Gstreamer](http://gstreamer.freedesktop.org/features/) supports a wide variety of formats including `asf`, `avi`, `ogg` and others. It allows Radio Tray to use the `pls`, `m3u`, `asx`, `wax` and `wvx` playlist formats.
 
 [`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop. See *figure 9*.
 
@@ -307,11 +307,11 @@ The following are a list of noteworthy directories where Radio Tray's components
 
 ####User Specific Directories
 
-* `~/.local/share/radiotray`
+* `/home/user/.local/share/radiotray`
 
   Bookmark and configuration files specific to a user. Radio Tray will load these before looking at the default configuration directory below.
 
-* `~/.local/share/radiotray/plugins`
+* `/home/user/.local/share/radiotray/plugins`
 
   User specific plug ins and their configurations.
 

@@ -32,7 +32,7 @@ I was curious as to `setup.py`'s functionality so I read through the source and 
 
 ##Bookmarks.xml
 
-I discovered that the files was located in `~/.local/share/radiotray` in a forum [thread](https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051). The `bookmarks.xml` file is fairly straight forward. I documented it by playing around with the XML and restarting the program.
+I discovered that the files was located in `/home/user/.local/share/radiotray` in a forum [thread](https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051). The `bookmarks.xml` file is fairly straight forward. I documented it by playing around with the XML and restarting the program.
 
 ##Config.xml
 

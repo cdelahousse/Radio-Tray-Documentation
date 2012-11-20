@@ -26,7 +26,7 @@ I believe this is worth documenting because these aspects of the program haven't
 
 ###Tools Used
 
-This document was composed in [Vim](http://www.vim.org/). I used [Pandoc](http://johnmacfarlane.net/pandoc/) to convert from the Markdown format to Latex and then to PDF. For screenshots, I used the [Shutter](http://shutter-project.org/) project.
+This document was composed in [Vim](http://www.vim.org/). I used [Pandoc](http://johnmacfarlane.net/pandoc/) to convert from the Markdown format to Latex and then to PDF. For screenshots, I used the [Shutter](http://shutter-project.org/) project. Everything is hosted on a GitHub [repository](https://github.com/cdelahousse/Radio-Tray-Documentation).
 
 ###How does this relate to course material?
 
