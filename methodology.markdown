@@ -4,9 +4,13 @@
 
 Generally, when starting any new documentation section, I would look to see what currently existed. There isn't very much, so I'd move on to other strategies. The next step would be to either dive into the source or look through the official .deb package. I'd uncover keywords, folders or commands of interest and find their documentation. These were typically more general components such as part of a Python library. I'd see how that part would fit with the entire whole.
 
-My scope requirements of the documentation task changed as I learned more about the project. My perception of project's complexity was that it was far less complex. I believed I wouldn't have enough to document. I was going to include a troubleshooting section and a few tips and tricks. Fortunately, the project was elaborate enough to have a lot to write about.
+My scope requirements of the documentation task changed as I learned more about the project. My perception of project's complexity was that it was far less than it actually is. I believed I wouldn't have enough to document. I was going to include a troubleshooting section and a few tips and tricks. Fortunately, the project was elaborate enough to have a lot to write about.
 
 **The following are specific methods used to write each documentation section:**
+
+##Usage
+
+I've been an avid Radio Tray user for over a year. Documenting usage was just a question of writing out and taking screenshots of what I typically do. 
 
 ##Installation
 
@@ -32,7 +36,7 @@ I was curious as to `setup.py`'s functionality so I read through the source and 
 
 ##Bookmarks.xml
 
-I discovered that the files was located in `/home/user/.local/share/radiotray` in a forum [thread](https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051). The `bookmarks.xml` file is fairly straight forward. I documented it by playing around with the XML and restarting the program.
+I discovered that the files was located in `/home/<user>/.local/share/radiotray` in a forum [thread](https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051). The `bookmarks.xml` file is fairly straight forward. I documented it by playing around with the XML and restarting the program.
 
 ##Config.xml
 
@@ -44,4 +48,5 @@ The timeout setting was a call to the Python `urllib2` library's [`open()`](http
 
 On the project's homepage, some of the dependencies are listed, and the author mentions gstreamer and GTK, but there was no detail. I want this section to expand on those few lines.
 
-I figured out how the project was built by reading through the source code and googling the dependencies. The screenshots were taken on various computers with the [Shutter](http://shutter-project.org/) screenshot application. I was able to access the source code by extracting the contents from the homepage's official deb package using $> `dpkg -x`. The directories listed in the documentation reflect those found in the extracted deb package and those listed at the bottom of `setup.py`.
+I figured out how the project was built by reading through the source code and googling the dependencies. I was able to access the source code by extracting the contents from the homepage's official deb package using $> `dpkg -x`. The directories listed in the documentation reflect those found in the extracted deb package and those listed at the bottom of `setup.py`.
+

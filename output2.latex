@@ -74,21 +74,22 @@ lacking.
 \subsubsection{What Will I Document? Is It Worth Documenting? Who's the
 Audience? How's This Useful?}
 
-I will documenting the aspects of the program that would benefit from
-it. I will be documenting general usage and installation methods across
-multiple platforms and from source. There are two important
+I will documenting the aspects of the program that would benefit the
+most. I will be documenting general usage and installation methods
+across multiple platforms and from source. There are two important
 configuration files, \texttt{bookmarks.xml} and \texttt{config.xml},
-that need documenting. Lastly, I will explore the program's design and
-dependencies, and how installs itself in the filesystem.
+that will be covered. Lastly, I will explore the program's design and
+dependencies, and how installs itself throughout the filesystem.
 
-I believe this is worth documenting because these aspects of the program
-haven't really been documented. Documentation relating to the
-configurations files would be essential for any heavy users or
-sysadmins. They could, for example, write a program to convert the
-\texttt{bookmarks.xml} file to and from other formats for other players.
+I believe these parts of the project are worth documenting because they
+are integral components. Documentation relating to the configurations
+files would be essential for any heavy users or sysadmins. Using this
+document, users could safely backup their bookmarks file or automate
+additon of extra station. Developers could write a program to convert
+the \texttt{bookmarks.xml} file to another another player's format.
 Documenting Radio Tray's design and dependencies would help any new
 developer hoping to contribute to the project. New users will benefit
-the most. Documenting basic usage will allow people to evaluate the
+the most; documenting basic usage will allow people to evaluate the
 program or get up to speed more quickly.
 
 \subsubsection{Tools Used}
@@ -117,14 +118,17 @@ distributions.
 
 \paragraph{Installing From Source}
 
-In class, we only briefly looked at how to install applications from
-source. What I found interesting about this section is I learned how
-Python packages modules as opposed to standard package management
-system.
+In class, we discussed how to install programs from source. This section
+is a direct application of that. What I found interesting about this
+section is how Python packages modules as opposed to standard package
+management system.
 
 \paragraph{Bookmarks.xml and config.xml}
 
-Modifying configuration files is essential to proper sysadmining.
+Modifying configuration files is essential to proper sysadmining and the
+course labs had us modifying our fair share of them. This section will
+take that a step further and describe what these files do for Radio
+Tray.
 
 \paragraph{Program Components and Installation Directories}
 
@@ -511,9 +515,9 @@ Modules}.
 \subsection{Bookmarks.xml}
 
 All radio stations are saved to \texttt{bookmarks.xml} which is located
-in \texttt{\textasciitilde{}/.local/share/radiotray}. It is an XML file
-that uses a nested hierarchy to represent groups and stations. If a
-bookmarks file isn't at that location, the default
+in \texttt{/home/\textless{}user\textgreater{}/.local/share/radiotray}.
+It is an XML file that uses a nested hierarchy to represent groups and
+stations. If a bookmarks file isn't at that location, the default
 \texttt{bookmarks.xml} will be copied over. Moving or backing up an
 existing set of bookmarks is as simple as copying this file.
 
@@ -558,8 +562,9 @@ Tray's main menu.
 \subsection{Config.xml}
 
 Radio Tray's configuration state is saved to \texttt{config.xml} which
-is located in \texttt{\textasciitilde{}/.local/share/radiotray/}. If one
-isn't in that folder, the default configuration file will be copied
+is located in
+\texttt{/home/\textless{}user\textgreater{}/.local/share/radiotray/}. If
+one isn't in that folder, the default configuration file will be copied
 over.
 
 \begin{verbatim}
@@ -623,7 +628,7 @@ the result. \texttt{systray} will have the icon appear on the far right
 panel of the task area. This is where system features like volume
 control and power management are housed. \texttt{appindicator} will have
 the icon appear right before that, in the Application Indicator area.
-This are where applications who wish to have part of their interface on
+This is where applications who wish to have part of their interface on
 the panel is located. For more information on the differences, visit the
 \href{https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators}{Application
 Indicators Ubuntu Page}.
@@ -719,7 +724,7 @@ system. Other distributions may differ.
 
 \begin{itemize}
 \item
-  \texttt{\textasciitilde{}/.local/share/radiotray}
+  \texttt{/home/\textless{}user\textgreater{}/.local/share/radiotray}
 \end{itemize}
 
 Bookmark and configuration files specific to a user. Radio Tray will
@@ -727,7 +732,7 @@ load these before looking at the default configuration directory below.
 
 \begin{itemize}
 \item
-  \texttt{\textasciitilde{}/.local/share/radiotray/plugins}
+  \texttt{/home/\textless{}user\textgreater{}/.local/share/radiotray/plugins}
 \end{itemize}
 
 User specific plug ins and their configurations.
@@ -840,13 +845,19 @@ see how that part would fit with the entire whole.
 
 My scope requirements of the documentation task changed as I learned
 more about the project. My perception of project's complexity was that
-it was far less complex. I believed I wouldn't have enough to document.
-I was going to include a troubleshooting section and a few tips and
-tricks. Fortunately, the project was elaborate enough to have a lot to
-write about.
+it was far less than it actually is. I believed I wouldn't have enough
+to document. I was going to include a troubleshooting section and a few
+tips and tricks. Fortunately, the project was elaborate enough to have a
+lot to write about.
 
 \textbf{The following are specific methods used to write each
 documentation section:}
+
+\subsection{Usage}
+
+I've been an avid Radio Tray user for over a year. Documenting usage was
+just a question of writing out and taking screenshots of what I
+typically do.
 
 \subsection{Installation}
 
@@ -907,7 +918,8 @@ python modules} and a natural way to install Radio Tray.
 \subsection{Bookmarks.xml}
 
 I discovered that the files was located in
-\texttt{\textasciitilde{}/.local/share/radiotray} in a forum
+\texttt{/home/\textless{}user\textgreater{}/.local/share/radiotray} in a
+forum
 \href{https://www.ultimateeditionoz.com/forum/viewtopic.php?t=3051}{thread}.
 The \texttt{bookmarks.xml} file is fairly straight forward. I documented
 it by playing around with the XML and restarting the program.
@@ -932,10 +944,8 @@ author mentions gstreamer and GTK, but there was no detail. I want this
 section to expand on those few lines.
 
 I figured out how the project was built by reading through the source
-code and googling the dependencies. The screenshots were taken on
-various computers with the \href{http://shutter-project.org/}{Shutter}
-screenshot application. I was able to access the source code by
-extracting the contents from the homepage's official deb package using
-\$\textgreater{} \texttt{dpkg -x}. The directories listed in the
+code and googling the dependencies. I was able to access the source code
+by extracting the contents from the homepage's official deb package
+using \$\textgreater{} \texttt{dpkg -x}. The directories listed in the
 documentation reflect those found in the extracted deb package and those
 listed at the bottom of \texttt{setup.py}.

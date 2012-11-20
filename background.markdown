@@ -20,9 +20,9 @@ Documentation regarding usage, the configuration file, the bookmarks file, insta
 
 ###What Will I Document? Is It Worth Documenting? Who's the Audience? How's This Useful?
 
-I will documenting the aspects of the program that would benefit from it. I will be documenting general usage and installation methods across multiple platforms and from source. There are two important configuration files, `bookmarks.xml` and `config.xml`, that need documenting. Lastly, I will explore the program's design and dependencies, and how installs itself in the filesystem. 
+I will documenting the aspects of the program that would benefit the most. I will be documenting general usage and installation methods across multiple platforms and from source. There are two important configuration files, `bookmarks.xml` and `config.xml`, that will be covered. Lastly, I will explore the program's design and dependencies, and how installs itself throughout the filesystem. 
 
-I believe this is worth documenting because these aspects of the program haven't really been documented. Documentation relating to the configurations files would be essential for any heavy users or sysadmins. They could, for example, write a program to convert the `bookmarks.xml` file to and from other formats for other players. Documenting Radio Tray's design and dependencies would help any new developer hoping to contribute to the project. New users will benefit the most. Documenting basic usage will allow people to evaluate the program or get up to speed more quickly.
+I believe these parts of the project are worth documenting because they are integral components. Documentation relating to the configurations files would be essential for any heavy users or sysadmins. Using this document, users could safely backup their bookmarks file or automate additon of extra station. Developers could write a program to convert the `bookmarks.xml` file to another another player's format. Documenting Radio Tray's design and dependencies would help any new developer hoping to contribute to the project. New users will benefit the most; documenting basic usage will allow people to evaluate the program or get up to speed more quickly.
 
 ###Tools Used
 
@@ -33,15 +33,16 @@ This document was composed in [Vim](http://www.vim.org/). I used [Pandoc](http:/
 While documenting this project, I found a lot of what I learned in class invaluable and very applicable. I'll relate the project to course material section by section.
 
 ####Distribution Install Processes
+
 The installation section explores what we learned in class about Package Management. We learned how apt-get looks through lists of repositories for your desired application. I elaborated on this idea by showing the user how to add private repositories and displaying their advantages. I also explored other package management solutions for different distributions.
 
 ####Installing From Source
 
-In class, we only briefly looked at how to install applications from source. What I found interesting about this section is I learned how Python packages modules as opposed to standard package management system.
+In class, we discussed how to install programs from source. This section is a direct application of that. What I found interesting about this section is how Python packages modules as opposed to standard package management system.
 
 ####Bookmarks.xml and config.xml
 
-Modifying configuration files is essential to proper sysadmining. 
+Modifying configuration files is essential to proper sysadmining and the course labs had us modifying our fair share of them. This section will take that a step further and describe what these files do for Radio Tray.
 
 ####Program Components and Installation Directories
 

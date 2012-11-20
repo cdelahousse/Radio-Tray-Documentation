@@ -203,7 +203,7 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
 ##Bookmarks.xml
 
-All radio stations are saved to `bookmarks.xml` which is located in `home/user/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default `bookmarks.xml` will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.
+All radio stations are saved to `bookmarks.xml` which is located in `/home/<user>/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default `bookmarks.xml` will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.
 
 Here is an example of a simple `bookmarks.xml` file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.
 
@@ -228,7 +228,7 @@ To load any changes to `bookmarks.xml`, reload the file by selecting *Preference
 
 ##Config.xml
 
-Radio Tray's configuration state is saved to `config.xml` which is located in `/home/user/.local/share/radiotray/`. If one isn't in that folder, the default configuration file will be copied over.
+Radio Tray's configuration state is saved to `config.xml` which is located in `/home/<user>/.local/share/radiotray/`. If one isn't in that folder, the default configuration file will be copied over.
 
     <config>
       <option name="volume_increment" value="0.05"/>
@@ -262,7 +262,7 @@ Every option is housed in an `<option name="..." value="...">` tag with a key/va
 
   * `gui_engine` expects a string. Default: "chooser"
 
-  This settings determines where and how the Radio Tray icon and menu will be displayed. There are three options: `chooser`, `appindicator` and `systray`. `chooser` displays a dialog box that lets you choose between the other two options and saves the result. `systray` will have the icon appear on the far right panel of the task area. This is where system features like volume control and power management are housed. `appindicator` will have the icon appear right before that, in the Application Indicator area. This are where applications who wish to have part of their interface on the panel is located. For more information on the differences, visit the [Application Indicators Ubuntu Page](https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators).
+  This settings determines where and how the Radio Tray icon and menu will be displayed. There are three options: `chooser`, `appindicator` and `systray`. `chooser` displays a dialog box that lets you choose between the other two options and saves the result. `systray` will have the icon appear on the far right panel of the task area. This is where system features like volume control and power management are housed. `appindicator` will have the icon appear right before that, in the Application Indicator area. This is where applications who wish to have part of their interface on the panel is located. For more information on the differences, visit the [Application Indicators Ubuntu Page](https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators).
 
   It is suggested that you select `appindicator` because the menu will be nicer.
 
@@ -307,11 +307,11 @@ The following are a list of noteworthy directories where Radio Tray's components
 
 ####User Specific Directories
 
-* `/home/user/.local/share/radiotray`
+* `/home/<user>/.local/share/radiotray`
 
   Bookmark and configuration files specific to a user. Radio Tray will load these before looking at the default configuration directory below.
 
-* `/home/user/.local/share/radiotray/plugins`
+* `/home/<user>/.local/share/radiotray/plugins`
 
   User specific plug ins and their configurations.
 
