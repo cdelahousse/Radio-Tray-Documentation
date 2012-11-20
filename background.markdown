@@ -28,6 +28,8 @@ Documentation regarding usage, the configuration files, the bookmarks file, inst
 ###Is it worth documenting? Who's the audience? How's This Useful?
 
 
+###How has our view changed A:LFJ:ALKDJF:ASLJDF:L
+
 
 ###How does this relate to course material?
 

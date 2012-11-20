@@ -203,17 +203,20 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
 ##Bookmarks.xml
 
-All radio stations are saved to `bookmarks.xml` which is located in `~/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. Moving or backing up an existing set of bookmarks is as simple as copying this file.
+All radio stations are saved to `bookmarks.xml` which is located in `~/.local/share/radiotray`. It is an XML file that uses a nested hierarchy to represent groups and stations. If one isn't at that location, the default `bookmarks.xml` will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.
 
 Here is an example of a simple `bookmarks.xml` file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.
 
     <bookmarks>
       <group name="root">
         <group name="CBC">
-          <bookmark name="Radio 2" url="http://playerservices.streamtheworld.com/pls/CBC_R2_TOR_H.pls"/>
-          <bookmark name="R3" url="http://playerservices.streamtheworld.com/pls/CBC_R3_WEB.pls"/>
+          <bookmark name="Radio 2" 
+              url="http://playerservices.streamtheworld.com/pls/CBC_R2_TOR_H.pls"/>
+          <bookmark name="R3"
+              url="http://playerservices.streamtheworld.com/pls/CBC_R3_WEB.pls"/>
         </group>
-        <bookmark name="DI EuroDance" url="http://scfire-dtc-aa04.stream.aol.com:80/stream/1024"/>
+        <bookmark name="DI EuroDance"
+              url="http://scfire-dtc-aa04.stream.aol.com:80/stream/1024"/>
       </group>
     </bookmarks>
 
@@ -223,6 +226,53 @@ Bookmarks are grouped using the `<group name="..."> ... </group>` tags. Group na
 
 To load any changes to `bookmarks.xml`, reload the file by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
 
+##Config.xml
+
+Radio Tray's configuration state is saved to `config.xml` which is located in `~/.local/share/radiotray/`. If one isn't in that folder, the default configuration file will be copied over.
+
+    <config>
+      <option name="volume_increment" value="0.05"/>
+      <option name="volume_level" value="1.0"/>
+      <option name="url_timeout" value="100"/>
+      <option name="enable_application_indicator_support" value="false"/>
+      <!-- valid options are 'appindicator', 'systray' and 'chooser' -->
+      <option name="gui_engine" value="appindicator"/>
+      <option name="active_plugins">
+        <item>Notifications</item>
+      </option>
+      <option name="buffer_size" value="164000"/>
+    </config>
+
+
+Every option is housed in an `<option name="..." value="...">` tag with a key/value (name/value) pair.
+
+  * `volume_increment` expects an float (0 < x < 1). Default: 0.05
+
+  Determines the step size at which the GStreamer audio player will raise or lower volume.
+
+  * `volume_level` expects a float (0 < = x < = 1). Default: 1.0 
+
+  Determines the current volume for the GStreamer audio player.
+
+  * `url_timeout` expects an integer (0 < = x). Default: 100 
+
+  The amount of time in seconds until the connection to a stream times out.
+
+  * `enable_application_indicator_support` expect a boolean. Default: "false"
+
+  * `gui_engine` expects a string. Default: "chooser"
+
+  This settings determines where and how the Radio Tray icon and menu will be displayed. There are three options: `chooser`, `appindicator` and `systray`. `chooser` displays a dialog box that lets you choose between the other two options and saves the result. `systray` will have the icon appear on the far right panel of the task area. This is where system features like volume control and power management are housed. `appindicator` will have the icon appear right before that, in the Application Indicator area. This are where applications who wish to have part of their interface on the panel is located. For more information on the differences, visit the [Application Indicators Ubuntu Page](https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators).
+
+  It is suggested that you select `appindicator` because the menu will be nicer.
+
+  * `active_plugins`
+  
+  Determines which plugins are active. Set the plugin's name to activate it.
+
+  * `buffer_size` expects an integer (0 < x). Default: 164000
+
+  Sets gstreamer's buffer size in bytes. A larger size will ensure smoother playback but consume more memory.
 
 ##Technical Details and Design
 
@@ -264,7 +314,7 @@ The following are a list of noteworthy directories where Radio Tray's components
 
 * `~/.local/share/radiotray/plugins`
 
-  User specific plugins and configurations.
+  User specific plug ins and their configurations.
 
 ####System Directories
 

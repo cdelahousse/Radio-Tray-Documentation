@@ -40,6 +40,14 @@ I discovered that the files was located in `~/.local/share/radiotray` in a forum
 
 The `bookmarks.xml` file is fairly straight forward. I figured it out by modifying it and playing around with the XML structure.
 
+##Config.xml
+
+I cloned the project's repository to my harddrive and grepped the names of every option. This allowed me to follow the code and get an idea of what every setting did. 
+
+The timeout setting was a call to the Python `urllib2` library's [`open()`](http://docs.python.org/2/library/urllib2.html) method.
+
+To figure out which units were used for `buffer_size`, I had to look up the Gstreamer's [Python bindings](http://pygstdocs.berlios.de/pygst-reference/class-gstbuffer.html).
+
 ##Technical Details and Design
 
 On the project's homepage, some of the dependencies are listed, and the author mentions gstreamer and GTK, but there was no detail. I want this section to expand on those few lines.
