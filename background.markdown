@@ -15,11 +15,11 @@ On Linux, Radio Tray is fairly unique. Some people would compare it to KDE's [Am
 
 ###Current State of Documentation
 
-There exists very little official documentation for the project. The [man page](http://manpages.ubuntu.com/manpages/precise/en/man1/radiotray.1.html) is just a description of the program and what it does. The source code's [README](https://bitbucket.org/carlmig/radio-tray/src) only describes how to install it from source, but doesn't say what's happening.
+There exists very little official documentation for the project. The [man page](http://manpages.ubuntu.com/manpages/precise/en/man1/radiotray.1.html) is just a description of the program and what it does. The source code's [README](https://bitbucket.org/carlmig/radio-tray/src) only describes how to install it from source, but not in detail.
 
 There is not very much unofficial documentation either, and if it does exist, it is very Ubuntu centric. Webupd8 has a [tutorial](http://www.webupd8.org/2011/04/how-to-enable-ubuntu-appindicator-for.html) on how to install the application from PPA and how to change one setting in a configuration file. The only noteworthy document I found was a French language [guide](http://doc.ubuntu-fr.org/radiotray) on a French community website that touched lightly on the `bookmarks.xml` file.
 
-Documentation regarding usage, the configuration files, the bookmarks file, installation on other distributions, installation directories, uninstallation, program design, technical details and troubleshooting is severely lacking. 
+Documentation regarding usage, the configuration file, the bookmarks file, installation on other distributions, installation directories, program design, technical details and troubleshooting is severely lacking. 
 
 ###What will I document?
 
