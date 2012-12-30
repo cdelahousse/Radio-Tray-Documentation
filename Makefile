@@ -1,7 +1,7 @@
-.PHONY: clean
+.PHONY: clean build publish
 
 build:
-	cat introduction.markdown background.markdown draft.markdown methodology.markdown > output.markdown
+	cat introduction.markdown background.markdown documentation.markdown methodology.markdown > output.markdown
 
 publish: clean build
 	pandoc output.markdown -o output.latex -f markdown -t latex
