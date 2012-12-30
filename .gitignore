@@ -2,3 +2,5 @@
 #Ignoring
 
 output.markdown
+delivered/
+delivered/*
