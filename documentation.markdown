@@ -6,22 +6,22 @@
 
 Using Radio Tray couldn't be simpler. All you have to do is click the Radio Tray icon on your system's Application Indicator or System Tray. See *figure 1.*
 
-![Click systray icon](systray-cropped.png)
+![Click systray icon](img/systray-cropped.png)
 
 A list of stations will appear. Open a group and select one. See *figure 2.*
 
-![Select a station](stationselect-cropped.png)
+![Select a station](img/stationselect-cropped.png)
 
 The stream will start playing and the current song will be listed at the top of the menu. See *figure 3*.
 
-![Song listing](playing-cropped.png)
+![Song listing](img/playing-cropped.png)
 
 To stop playback, select *Turn Off "**Station Name**"* from the menu.
 
 ##Adding and Editing Radio Stations
 Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*. See *figure 4*.
 
-![Configuring Radio Stations](configradio-cropped.png)
+![Configuring Radio Stations](img/configradio-cropped.png)
 
 Bookmarks can live at the root of the *Radio Stations* dialog or be grouped together. *Figure 4* gives an example of the former (*NPR*) and the latter (*CBC*). 
 
@@ -31,13 +31,13 @@ After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookm
 
 To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to. See *figure 5*.
 
-![Adding a radio station bookmark](addradio-cropped.png)
+![Adding a radio station bookmark](img/addradio-cropped.png)
 
 ###Editing an Existing Station
 
 To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required. See *figure 6*.
 
-![Editing a radio station](editradio-cropped.png)
+![Editing a radio station](img/editradio-cropped.png)
 
 ##Installation
 
@@ -282,11 +282,11 @@ Radio Tray is written in the Python programming language using the [GTK+ GUI lib
 
 GTK+ is a well supported project that allows Radio Tray to integrate well in many desktop environments and window managers. Here are a few examples of the program in various GTK+ supported contexts:
 
-![Awesome Window Manager](awesomewm-cropped.png)
+![Awesome Window Manager](img/awesomewm-cropped.png)
 
 Radio Tray in the *Awesome Windows Manager*. See *figure 7*.
 
-![Xfce](xfce-cropped.png)
+![Xfce](img/xfce-cropped.png)
 
 Radio Tray in the *Xfce Desktop Environment*. See *figure 8*.
 
@@ -296,7 +296,7 @@ Radio Tray in the *Xfce Desktop Environment*. See *figure 8*.
 
 [`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop. See *figure 9*.
 
-![Ubuntu Notification](libnotify-cropped.png)
+![Ubuntu Notification](img/libnotify-cropped.png)
 
 
 The `python-central` dependency install the `distutils`. As discussed in the *Installing From Source* section, Radio Tray relies on the on it for packaging and distributing Python programs. 
