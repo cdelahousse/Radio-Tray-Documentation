@@ -2,5 +2,4 @@
 #Ignoring
 
 output.markdown
-delivered/
-delivered/*
+output.html
