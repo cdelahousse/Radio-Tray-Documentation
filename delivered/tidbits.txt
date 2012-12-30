@@ -1,3 +1,0 @@
-
-Can document sourcecode
-PDFtk is good to convert to PDF
