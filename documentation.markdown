@@ -1,41 +1,38 @@
-#Documentation Section
-
-
 
 ##Using Radio Tray
 
-Using Radio Tray couldn't be simpler. All you have to do is click the Radio Tray icon on your system's Application Indicator or System Tray. See *figure 1.*
+Using Radio Tray couldn't be simpler. All you have to do is click the Radio Tray icon on your system's Application Indicator or System Tray. 
 
 ![Click systray icon](img/systray-cropped.png)
 
-A list of stations will appear. Open a group and select one. See *figure 2.*
+A list of stations will appear. Open a group and select one. 
 
 ![Select a station](img/stationselect-cropped.png)
 
-The stream will start playing and the current song will be listed at the top of the menu. See *figure 3*.
+The stream will start playing and the current song will be listed at the top of the menu. 
 
 ![Song listing](img/playing-cropped.png)
 
 To stop playback, select *Turn Off "**Station Name**"* from the menu.
 
 ##Adding and Editing Radio Stations
-Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*. See *figure 4*.
+Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select *Preferences -> Configure Radios ...*. 
 
 ![Configuring Radio Stations](img/configradio-cropped.png)
 
-Bookmarks can live at the root of the *Radio Stations* dialog or be grouped together. *Figure 4* gives an example of the former (*NPR*) and the latter (*CBC*). 
+Bookmarks can live at the root of the *Radio Stations* dialog or be grouped together. Here is an example of the former (*NPR*) and the latter (*CBC*). 
 
 After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
 
 ###Adding a New Station
 
-To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to. See *figure 5*.
+To save a new station, press the *Add* button in the *Configure Radios* dialog. The *Add new station* dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to. 
 
 ![Adding a radio station bookmark](img/addradio-cropped.png)
 
 ###Editing an Existing Station
 
-To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required. See *figure 6*.
+To edit an existing bookmark, select it in the *Configure Radios* list and press the *Edit* button. An edit dialog will appear. Change fields as required. 
 
 ![Editing a radio station](img/editradio-cropped.png)
 
@@ -284,17 +281,17 @@ GTK+ is a well supported project that allows Radio Tray to integrate well in man
 
 ![Awesome Window Manager](img/awesomewm-cropped.png)
 
-Radio Tray in the *Awesome Windows Manager*. See *figure 7*.
+Radio Tray in the *Awesome Windows Manager*. 
 
 ![Xfce](img/xfce-cropped.png)
 
-Radio Tray in the *Xfce Desktop Environment*. See *figure 8*.
+Radio Tray in the *Xfce Desktop Environment*. 
 
 [Glade](http://glade.gnome.org/), Gnome's User Interface Designer, was used to build the bookmark and preferences pane. Glade uses XML files and the GTK+ library to dynamically generate these panes on the fly. Theses files are located in `/usr/share/radiotray`.
 
 [Gstreamer](http://gstreamer.freedesktop.org/features/) supports a wide variety of formats including `asf`, `avi`, `ogg` and others. It allows Radio Tray to use the `pls`, `m3u`, `asx`, `wax` and `wvx` playlist formats.
 
-[`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop. See *figure 9*.
+[`python-notify`](http://packages.ubuntu.com/quantal/python-notify) is a set of Python bindings for [libnotify](http://developer-next.gnome.org/libnotify/), a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the [freedesktop.org](http://www.freedesktop.org/wiki/) Desktop Notification [specification](http://developer.gnome.org/notification-spec/). On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop. 
 
 ![Ubuntu Notification](img/libnotify-cropped.png)
 
