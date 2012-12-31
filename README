@@ -1,0 +1,11 @@
+# Radiotray Documentation
+
+How to build the final Markdown document
+
+	make build
+
+How to convert it to raw HTML
+
+	make html
+
+/* vim: set filetype=markdown : */ 
