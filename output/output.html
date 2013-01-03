@@ -1,0 +1,359 @@
+<html><head><link rel="stylesheet" href="markdown.css"></head><body>
+<h1>Radiotray</h1>
+
+<p>This document uses the following conventions:</p>
+
+<ul>
+<li>"$> <code>command</code>" denotes a command line prompt and associated command.</li>
+<li>Any <code>word</code> in a mono spaced font is a technical keyword.</li>
+<li>References to source material are links within the document's body.</li>
+</ul>
+
+<h3>Description</h3>
+
+<p>Radio Tray is a simple internet radio player that lives in the system tray or Application Indicator. It saves a list of your favourite stations for easy access to wonderful music. Its aim is to be as simple as possible, staying out of the way and doing one thing really well.</p>
+
+<h3>Similar Programs</h3>
+
+<p>On Windows, <em>Radio? Sure!</em> is a similar program that also resides in the tasktray. It mirrors a lot of Radio Tray's functionality but differs in that the Windows application actually gives you access to a user maintained database of Internet Radio stations.</p>
+
+<p>On Linux, Radio Tray is fairly unique. Some people would compare it to KDE's <a href="http://amarok.kde.org/">Amarok</a> or Novell's <a href="http://banshee.fm/">Banshee</a>, but these are more general media applications and are far more featured. They stray from Radio Tray's single purposeness. They aren't as well suited to managing and playing Internet Radio, despite being able to.</p>
+
+<p><a href="http://audacious-media-player.org/">Audacious</a> shares Radio Tray's simplicity, but is geared to being an all around music player. It has the same support for Internet radio station, but doesn't do a very good job managing or bookmarking them. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.</p>
+
+<h2>Using Radio Tray</h2>
+
+<p>Using Radio Tray couldn't be simpler. All you have to do is click the Radio Tray icon on your system's Application Indicator or System Tray. </p>
+
+<p><img src="img/systray-cropped.png" alt="Click systray icon" title="" /></p>
+
+<p>A list of stations will appear. Open a group and select one. </p>
+
+<p><img src="img/stationselect-cropped.png" alt="Select a station" title="" /></p>
+
+<p>The stream will start playing and the current song will be listed at the top of the menu. </p>
+
+<p><img src="img/playing-cropped.png" alt="Song listing" title="" /></p>
+
+<p>To stop playback, select <em>Turn Off "<strong>Station Name</strong>"</em> from the menu.</p>
+
+<h2>Adding and Editing Radio Stations</h2>
+
+<p>Radio Trays offers a simple and intuitive interface to modify Internet Radio station bookmarks.To access it, simply open Radio Tray and select <em>Preferences -> Configure Radios ...</em>. </p>
+
+<p><img src="img/configradio-cropped.png" alt="Configuring Radio Stations" title="" /></p>
+
+<p>Bookmarks can live at the root of the <em>Radio Stations</em> dialog or be grouped together. Here is an example of the former (<em>NPR</em>) and the latter (<em>CBC</em>). </p>
+
+<p>After modifying bookmarks, reload them by selecting <em>Preferences -> Reload Bookmarks</em> from Radio Tray's main menu. </p>
+
+<h3>Adding a New Station</h3>
+
+<p>To save a new station, press the <em>Add</em> button in the <em>Configure Radios</em> dialog. The <em>Add new station</em> dialog will appear. Enter the station's name, the stream's URL and either select the root or a group it should belong to. </p>
+
+<p><img src="img/addradio-cropped.png" alt="Adding a radio station bookmark" title="" /></p>
+
+<h3>Editing an Existing Station</h3>
+
+<p>To edit an existing bookmark, select it in the <em>Configure Radios</em> list and press the <em>Edit</em> button. An edit dialog will appear. Change fields as required. </p>
+
+<p><img src="img/editradio-cropped.png" alt="Editing a radio station" title="" /></p>
+
+<h2>Installation</h2>
+
+<p>This section will cover installing Radio Tray on a variety of distribution. Whenever possible, please use a package manager to install it. This will keep all dependencies in check and ensure a successful installation.</p>
+
+<h3>Ubuntu/Linux Mint</h3>
+
+<h4>Using the Ubuntu repositories</h4>
+
+<p>A Radio Tray <a href="http://packages.ubuntu.com/quantal/radiotray">package</a> is maintained in Ubuntu's Universe repository along with other community maintained software. Simply use <code>apt-get</code> to install it.</p>
+
+<p>$> <code>sudo apt-get update</code></p>
+
+<p>$> <code>sudo apt-get install radio-tray</code></p>
+
+<p>Unfortunately, this package is always a few versions behind. As of this writing, version 0.7.2 is in the Ubuntu Quantal Quetzal (12.10) repositories and version 0.6.4.1 in the Precise Pangolin (12.04) repositories, yet the latest stable version is 0.7.3.</p>
+
+<h4>Using a PPA</h4>
+
+<p>Fortunately, the wonderful folks at <a href="http://estobuntu.org/estobuntu-english">Estobuntu</a> (an Estonian derivative of Ubuntu), have maintained a <a href="https://help.launchpad.net/Packaging/PPA">personal package archive</a> (PPA) with the <a href="https://launchpad.net/~estobuntu/+archive/ppa/+sourcepub/2623076/+listing-archive-extra">current version of Radio Tray</a> for Ubuntu 12.04. A PPA is a privately maintained set of packages openly available to the public. Simply add it to your list of repositories and you'll always be up to date. </p>
+
+<p>$> <code>sudo add-apt-repository ppa:estobuntu/ppa</code></p>
+
+<p>$> <code>sudo apt-get update</code></p>
+
+<p>$> <code>sudo apt-get install radiotray</code></p>
+
+<p>If <code>add-apt-repository</code> fails, simply install it using the <code>python-software-properties</code> package.</p>
+
+<p>$> <code>sudo apt-get install python-software-properties</code></p>
+
+<h4>Using the official binary package</h4>
+
+<p>The Radio Tray project maintains a binary package of the latest version. Installing the program from it is as follows.</p>
+
+<ol>
+<li><p>Navigate to the <code>/tmp</code> directory. Download the deb file.</p>
+
+<p>$> <code>cd /tmp</code></p>
+
+<p>$> <code>wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray_0.7.3_all.deb</code></p></li>
+<li><p>Install it using Ubuntu's package manager.</p>
+
+<p>$> <code>sudo dpkg -i radiotray_0.7.3_all.deb</code></p></li>
+<li><p>Once installed, you must follow through with the missing dependencies. This can be taken care of by the package manager.</p>
+
+<p>$> <code>sudo apt-get install -f</code></p></li>
+</ol>
+
+<p>Boom. You're done. </p>
+
+<h3>Arch Linux</h3>
+
+<p>There exists a <a href="https://aur.archlinux.org/packages/radiotray/">package</a> in the <a href="https://wiki.archlinux.org/index.php/AUR_User_Guidelines">Arch User Repository</a> (AUR) that contains a <a href="https://wiki.archlinux.org/index.php/PKGBUILD">PKGBUILD</a> file. The package does not contain binary. Instead, it will assist you in downloading and building the source from Radio Tray's site.</p>
+
+<p>Just follow the typical Arch Linux <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">installation process</a>.</p>
+
+<ol>
+<li><p>Open up the command line and navigate to the <code>/tmp</code> directory, create a new directory and navigate to it.</p>
+
+<p>$> <code>cd /tmp &amp;&amp; mkdir radiotray &amp;&amp; cd radiotray</code></p></li>
+<li><p>Download the tarball from the URL listed on <a href="https://aur.archlinux.org/packages/radiotray/">package's</a> page.</p>
+
+<p>$> <code>wget https://aur.archlinux.org/packages/ra/radiotray/radiotray.tar.gz</code></p></li>
+<li><p>Extract the <code>PKGBUILD</code> file from the tarball to the new directory and navigate to it.</p>
+
+<p>$> <code>tar -zxvf radiotray.tar.gz</code></p>
+
+<p>$> <code>cd radiotray</code></p></li>
+<li><p>Build the package which will resolve the required dependencies listed within the <code>PKGBUILD</code> file.</p>
+
+<p>$> <code>makepkg -s</code></p></li>
+<li><p>Use the <code>pacman</code> package manager to install the built binary package, replacing the filename with the appropriate one.</p>
+
+<p>$> <code>pacman -U radiotray-*-*-i686.pkg.tar.xz</code></p></li>
+</ol>
+
+<h3>Fedora</h3>
+
+<p>The Fedora Package Database contains a Radio Tray <a href="https://admin.fedoraproject.org/pkgdb/acls/name/radiotray">package</a>.</p>
+
+<p>$> <code>su - 'yum install radiotray'</code></p>
+
+<p>This will require you to enter your admin password.</p>
+
+<p>As of this writing, the package (ver 0.7.1) is slightly dated.</p>
+
+<h3>Gentoo</h3>
+
+<p>The Portage database contains a Radio Tray <a href="http://gentoo-portage.com/media-radio/radiotray">package</a>.</p>
+
+<p>To install, simply use the wonderful Portage package manager.</p>
+
+<ol>
+<li><p>Update the Portage tree.</p>
+
+<p>$> <code>emerge --sync</code></p></li>
+<li><p>Use emerge to install it.</p>
+
+<p>$> <code>emerge radiotray</code></p></li>
+</ol>
+
+<h3>Installing From Source</h3>
+
+<p>If you'd like to keep up with the bleeding edge or your distribution doesn't ship with a Radio Tray package, your only option may be to install it from source.</p>
+
+<ol>
+<li><p>Before starting the installation process, make sure your system has all of Radio Tray's dependencies. Your distribution's package names may differ, but for Ubuntu and Debian, the following packages are required</p>
+
+<ul>
+<li>python</li>
+<li>python-central (>= 0.6.11)</li>
+<li>python-gst0.10 (>= 0.10)</li>
+<li>python-gtk2 (>= 2.16.0)</li>
+<li>python-lxml (>= 2.1.5)</li>
+<li>python-gobject (>= 2.18.0)</li>
+<li>python-notify (>= 0.1.1)</li>
+<li>python-dbus (>= 0.83.0)</li>
+<li>python-glade2</li>
+</ul></li>
+<li><p>Open up the command line and navigate to the <code>/tmp</code> directory, create a new directory and navigate to it.</p>
+
+<p>$> <code>cd /tmp &amp;&amp; mkdir radiotray &amp;&amp; cd radiotray</code></p></li>
+<li><p>Download the source code to your disk. </p>
+
+<ul>
+<li><p>Either clone the project's mercurial repository</p>
+
+<p>$> <code>hg clone https://bitbucket.org/carlmig/radio-tray</code></p></li>
+<li><p>Or download the official source <a href="http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz">tarball</a> from the project's <a href="http://radiotray.sourceforge.net/">homepage</a> and extract it.</p>
+
+<p>$> <code>wget http://downloads.sourceforge.net/project/radiotray/releases/radiotray-0.7.3.tar.gz</code></p>
+
+<p>$> <code>tar -zxvf radiotray-0.7.3.tar.gz</code></p></li>
+</ul></li>
+<li><p>Navigate to the source.</p>
+
+<p>$> <code>cd radiotray-0.7.3</code></p></li>
+<li><p>If you'd like to try Radio Tray before installing it to your system, run the executable.</p>
+
+<p>$> <code>./radiotray</code></p>
+
+<p>If it doesn't work, you may need to change the file's permissions and make it executable.</p>
+
+<p>$> <code>chmod +x ./radiotray</code></p></li>
+<li><p>Finally, to install it to your machine, run the set up script.</p>
+
+<p>$> <code>python setup.py install</code></p></li>
+</ol>
+
+<p><code>setup.py</code> uses Python's <code>distutils</code> <a href="http://docs.python.org/2/library/distutils.html">library</a> to install the application. This is the conventional way of distributing Python modules to many systems and handles the distribution specific installation details. For more information visit Python Doc's <a href="http://docs.python.org/2/install/index.html">Installing Python Modules</a>.</p>
+
+<h2>Bookmarks.xml</h2>
+
+<p>All radio stations are saved to <code>bookmarks.xml</code> which is located in <code>/home/&lt;user&gt;/.local/share/radiotray</code>. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default <code>bookmarks.xml</code> will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.</p>
+
+<p>Here is an example of a simple <code>bookmarks.xml</code> file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.</p>
+
+<pre><code>&lt;bookmarks&gt;
+  &lt;group name="root"&gt;
+    &lt;group name="CBC"&gt;
+      &lt;bookmark name="Radio 2" 
+          url="http://playerservices.streamtheworld.com/pls/CBC_R2_TOR_H.pls"/&gt;
+      &lt;bookmark name="R3"
+          url="http://playerservices.streamtheworld.com/pls/CBC_R3_WEB.pls"/&gt;
+    &lt;/group&gt;
+    &lt;bookmark name="DI EuroDance"
+          url="http://scfire-dtc-aa04.stream.aol.com:80/stream/1024"/&gt;
+  &lt;/group&gt;
+&lt;/bookmarks&gt;
+</code></pre>
+
+<p>The entire document must be nested within the <code>&lt;bookmarks&gt; ... &lt;/bookmark&gt;</code> tags for it to be valid XML. Bookmark entries are declared using the <code>&lt;bookmark name="..." url="..." /&gt;</code> tag, which contains the station name and stream URL attributes. It must be self terminating.</p>
+
+<p>Bookmarks are grouped using the <code>&lt;group name="..."&gt; ... &lt;/group&gt;</code> tags. Group names are declared using the name attributes. Any bookmarked within these tags will be grouped together. Every bookmark or group must be nested within the top <code>&lt;group name="root"&gt;</code> which represents the root of the bookmark list. Many groups can be nested within each other.</p>
+
+<p>To load any changes to <code>bookmarks.xml</code>, reload the file by selecting <em>Preferences -> Reload Bookmarks</em> from Radio Tray's main menu. </p>
+
+<h2>Config.xml</h2>
+
+<p>Radio Tray's configuration state is saved to <code>config.xml</code> which is located in <code>/home/&lt;user&gt;/.local/share/radiotray/</code>. If one isn't in that folder, the default configuration file will be copied over.</p>
+
+<pre><code>&lt;config&gt;
+  &lt;option name="volume_increment" value="0.05"/&gt;
+  &lt;option name="volume_level" value="1.0"/&gt;
+  &lt;option name="url_timeout" value="100"/&gt;
+  &lt;option name="enable_application_indicator_support" value="false"/&gt;
+  &lt;!-- valid options are 'appindicator', 'systray' and 'chooser' --&gt;
+  &lt;option name="gui_engine" value="appindicator"/&gt;
+  &lt;option name="active_plugins"&gt;
+    &lt;item&gt;Notifications&lt;/item&gt;
+  &lt;/option&gt;
+  &lt;option name="buffer_size" value="164000"/&gt;
+&lt;/config&gt;
+</code></pre>
+
+<p>Every option is housed in an <code>&lt;option name="..." value="..."&gt;</code> tag with a key/value (name/value) pair.</p>
+
+<ul>
+<li><p><code>volume_increment</code> expects an float (0 &lt; x &lt; 1). Default: 0.05</p>
+
+<p>Determines the step size at which the GStreamer audio player will raise or lower volume.</p></li>
+<li><p><code>volume_level</code> expects a float (0 &lt; = x &lt; = 1). Default: 1.0 </p>
+
+<p>Determines the current volume for the GStreamer audio player.</p></li>
+<li><p><code>url_timeout</code> expects an integer (0 &lt; = x). Default: 100 </p>
+
+<p>The amount of time in seconds until the connection to a stream times out.</p></li>
+<li><p><code>enable_application_indicator_support</code> expect a boolean. Default: "false"</p></li>
+<li><p><code>gui_engine</code> expects a string. Default: "chooser"</p>
+
+<p>This settings determines where and how the Radio Tray icon and menu will be displayed. There are three options: <code>chooser</code>, <code>appindicator</code> and <code>systray</code>. <code>chooser</code> displays a dialog box that lets you choose between the other two options and saves the result. <code>systray</code> will have the icon appear on the far right panel of the task area. This is where system features like volume control and power management are housed. <code>appindicator</code> will have the icon appear right before that, in the Application Indicator area. This is where applications who wish to have part of their interface on the panel is located. For more information on the differences, visit the <a href="https://wiki.ubuntu.com/DesktopExperienceTeam/ApplicationIndicators">Application Indicators Ubuntu Page</a>.</p>
+
+<p>It is suggested that you select <code>appindicator</code> because the menu will be nicer.</p></li>
+<li><p><code>active_plugins</code></p>
+
+<p>Determines which plugins are active. Set the plugin's name to activate it.</p></li>
+<li><p><code>buffer_size</code> expects an integer (0 &lt; x). Default: 164000</p>
+
+<p>Sets gstreamer's buffer size in bytes. A larger size will ensure smoother playback but consume more memory.</p></li>
+</ul>
+
+<h2>Technical Details and Design</h2>
+
+<h3>Program components</h3>
+
+<p>Radio Tray is written in the Python programming language using the <a href="http://www.gtk.org/">GTK+ GUI library</a> and the <a href="http://gstreamer.freedesktop.org/">gstreamer</a> multimedia framework.</p>
+
+<p>GTK+ is a well supported project that allows Radio Tray to integrate well in many desktop environments and window managers. Here are a few examples of the program in various GTK+ supported contexts:</p>
+
+<p><img src="img/awesomewm-cropped.png" alt="Awesome Window Manager" title="" /></p>
+
+<p>Radio Tray in the <em>Awesome Windows Manager</em>. </p>
+
+<p><img src="img/xfce-cropped.png" alt="Xfce" title="" /></p>
+
+<p>Radio Tray in the <em>Xfce Desktop Environment</em>. </p>
+
+<p><a href="http://glade.gnome.org/">Glade</a>, Gnome's User Interface Designer, was used to build the bookmark and preferences pane. Glade uses XML files and the GTK+ library to dynamically generate these panes on the fly. Theses files are located in <code>/usr/share/radiotray</code>.</p>
+
+<p><a href="http://gstreamer.freedesktop.org/features/">Gstreamer</a> supports a wide variety of formats including <code>asf</code>, <code>avi</code>, <code>ogg</code> and others. It allows Radio Tray to use the <code>pls</code>, <code>m3u</code>, <code>asx</code>, <code>wax</code> and <code>wvx</code> playlist formats.</p>
+
+<p><a href="http://packages.ubuntu.com/quantal/python-notify"><code>python-notify</code></a> is a set of Python bindings for <a href="http://developer-next.gnome.org/libnotify/">libnotify</a>, a part of the Gnome library. It sends messages to a desktop notification deamon using D-Bus for interprocess communication and adheres to the <a href="http://www.freedesktop.org/wiki/">freedesktop.org</a> Desktop Notification <a href="http://developer.gnome.org/notification-spec/">specification</a>. On Ubuntu, these notifications manifest themselves as bubbles appearing in top right corner of the desktop. </p>
+
+<p><img src="img/libnotify-cropped.png" alt="Ubuntu Notification" title="" /></p>
+
+<p>The <code>python-central</code> dependency install the <code>distutils</code>. As discussed in the <em>Installing From Source</em> section, Radio Tray relies on the on it for packaging and distributing Python programs. </p>
+
+<h3>Directories</h3>
+
+<p>The following are a list of noteworthy directories where Radio Tray's components are installed. This section applies to an Ubuntu/Debian based system. Other distributions may differ.</p>
+
+<h4>User Specific Directories</h4>
+
+<ul>
+<li><p><code>/home/&lt;user&gt;/.local/share/radiotray</code></p>
+
+<p>Bookmark and configuration files specific to a user. Radio Tray will load these before looking at the default configuration directory below.</p></li>
+<li><p><code>/home/&lt;user&gt;/.local/share/radiotray/plugins</code></p>
+
+<p>User specific plug ins and their configurations.</p></li>
+</ul>
+
+<h4>System Directories</h4>
+
+<ul>
+<li><p><code>/usr/bin</code></p>
+
+<p>Stores the program's main executable.</p></li>
+<li><p><code>/usr/share/locale</code></p>
+
+<p>Radio Tray has been translated into <a href="http://www.transifex.net/projects/p/radiotray/">dozens of languages</a> and stores its localization files here.</p></li>
+<li><p><code>/usr/share/pyshared/radiotray</code></p>
+
+<p>The bulk of Radio Tray's executable code lives here. This directory adheres to the Debian/Ubuntu's <a href="http://wiki.debian.org/Python/Policy">Python policy</a> which states that shared Python modules should be stored in a child of <code>/usr/share/pyshared</code>. </p></li>
+<li><p><code>/usr/share/radiotray</code></p>
+
+<p>Default bookmarks and configuration xml files, glade files and image resources.</p></li>
+<li><p><code>/usr/share/radiotray/plugins</code></p>
+
+<p>Default plugin directory</p></li>
+<li><p><code>/usr/share/applications</code></p>
+
+<p>Stores <code>radiotray.desktop</code>, so that Radio Tray appears in the program menus of <a href="http://www.freedesktop.org/wiki/">freedesktop.org</a> compliant desktop environments.</p></li>
+<li><p><code>/usr/share/doc/radiotray</code> and <code>/usr/share/man/man1</code></p>
+
+<p>The documentation and man page directories. On FreeBSD, <code>setup.py</code> installs the man page to /usr/man/.</p></li>
+<li><p><code>/usr/share/pixmaps</code></p>
+
+<p>Radio Tray's icon is located here. This adhere's to <a href="http://www.freedesktop.org/wiki/">freedesktop.org</a>'s <a href="http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html">Icon Theme Specification</a>.</p></li>
+<li><p><code>/usr/lib/python2.7/dist-packages/radiotray/</code> and <code>/usr/lib/python2.6/dist-packages/radiotray/</code></p>
+
+<p>Stores Radio Tray's Python byte code.</p></li>
+</ul>
+
+<h2>Contributing</h2>
+
+<p>Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's <a href="http://www.transifex.net/projects/p/radiotray/">Transiflex page</a> for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's <a href="https://bitbucket.org/carlmig/radio-tray/issues">issues</a> page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on <a href="http://bitbucket.org">BitBucket</a> using Mercurial as source control. Forking and contributing patches should be no trouble.</p>
+</body></html>
