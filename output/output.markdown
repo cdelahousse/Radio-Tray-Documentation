@@ -1,11 +1,5 @@
 #Radiotray
 
-This document uses the following conventions:
-
-* "$> `command`" denotes a command line prompt and associated command.
-* Any `word` in a mono spaced font is a technical keyword.
-* References to source material are links within the document's body.
-
 ###Description
 
 Radio Tray is a simple internet radio player that lives in the system tray or Application Indicator. It saves a list of your favourite stations for easy access to wonderful music. Its aim is to be as simple as possible, staying out of the way and doing one thing really well.
@@ -16,7 +10,7 @@ On Windows, *Radio? Sure!* is a similar program that also resides in the tasktra
 
 On Linux, Radio Tray is fairly unique. Some people would compare it to KDE's [Amarok](http://amarok.kde.org/) or Novell's [Banshee](http://banshee.fm/), but these are more general media applications and are far more featured. They stray from Radio Tray's single purposeness. They aren't as well suited to managing and playing Internet Radio, despite being able to.
 
-[Audacious](http://audacious-media-player.org/) shares Radio Tray's simplicity, but is geared to being an all around music player. It has the same support for Internet radio station, but doesn't do a very good job managing or bookmarking them. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.
+[Audacious](http://audacious-media-player.org/) shares Radio Tray's simplicity, but is geared to being an all around music player. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.
 
 
 ##Using Radio Tray
@@ -33,6 +27,10 @@ The stream will start playing and the current song will be listed at the top of 
 
 ![Song listing](img/playing-cropped.png)
 
+When a stream starts playing or it changes song, a notification dialog will appear at the corner of your screen.
+
+![Notification dialog](img/libnotify-cropped.png)
+
 To stop playback, select *Turn Off "**Station Name**"* from the menu.
 
 ##Adding and Editing Radio Stations
@@ -42,7 +40,7 @@ Radio Trays offers a simple and intuitive interface to modify Internet Radio sta
 
 Bookmarks can live at the root of the *Radio Stations* dialog or be grouped together. Here is an example of the former (*NPR*) and the latter (*CBC*). 
 
-After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
+Close the dialog to save your modifications.
 
 ###Adding a New Station
 
@@ -222,6 +220,13 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 
 Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's [Transiflex page](http://www.transifex.net/projects/p/radiotray/) for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's [issues](https://bitbucket.org/carlmig/radio-tray/issues) page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on [BitBucket](http://bitbucket.org) using Mercurial as source control. Forking and contributing patches should be no trouble.
 
+
+#Radio Tray Technical Documentation
+
+This document uses the following conventions:
+
+* "$> `command`" denotes a command line prompt and associated command.
+* Any `word` in a mono spaced font is a technical keyword.
 
 ##Bookmarks.xml
 

@@ -1,14 +1,6 @@
 <html><head><link rel="stylesheet" href="markdown.css"></head><body>
 <h1>Radiotray</h1>
 
-<p>This document uses the following conventions:</p>
-
-<ul>
-<li>"$> <code>command</code>" denotes a command line prompt and associated command.</li>
-<li>Any <code>word</code> in a mono spaced font is a technical keyword.</li>
-<li>References to source material are links within the document's body.</li>
-</ul>
-
 <h3>Description</h3>
 
 <p>Radio Tray is a simple internet radio player that lives in the system tray or Application Indicator. It saves a list of your favourite stations for easy access to wonderful music. Its aim is to be as simple as possible, staying out of the way and doing one thing really well.</p>
@@ -19,7 +11,7 @@
 
 <p>On Linux, Radio Tray is fairly unique. Some people would compare it to KDE's <a href="http://amarok.kde.org/">Amarok</a> or Novell's <a href="http://banshee.fm/">Banshee</a>, but these are more general media applications and are far more featured. They stray from Radio Tray's single purposeness. They aren't as well suited to managing and playing Internet Radio, despite being able to.</p>
 
-<p><a href="http://audacious-media-player.org/">Audacious</a> shares Radio Tray's simplicity, but is geared to being an all around music player. It has the same support for Internet radio station, but doesn't do a very good job managing or bookmarking them. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.</p>
+<p><a href="http://audacious-media-player.org/">Audacious</a> shares Radio Tray's simplicity, but is geared to being an all around music player. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.</p>
 
 <h2>Using Radio Tray</h2>
 
@@ -35,6 +27,10 @@
 
 <p><img src="img/playing-cropped.png" alt="Song listing" title="" /></p>
 
+<p>When a stream starts playing or it changes song, a notification dialog will appear at the corner of your screen.</p>
+
+<p><img src="img/libnotify-cropped.png" alt="Notification dialog" title="" /></p>
+
 <p>To stop playback, select <em>Turn Off "<strong>Station Name</strong>"</em> from the menu.</p>
 
 <h2>Adding and Editing Radio Stations</h2>
@@ -45,7 +41,7 @@
 
 <p>Bookmarks can live at the root of the <em>Radio Stations</em> dialog or be grouped together. Here is an example of the former (<em>NPR</em>) and the latter (<em>CBC</em>). </p>
 
-<p>After modifying bookmarks, reload them by selecting <em>Preferences -> Reload Bookmarks</em> from Radio Tray's main menu. </p>
+<p>Close the dialog to save your modifications.</p>
 
 <h3>Adding a New Station</h3>
 
@@ -213,6 +209,15 @@
 <h2>Contributing</h2>
 
 <p>Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's <a href="http://www.transifex.net/projects/p/radiotray/">Transiflex page</a> for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's <a href="https://bitbucket.org/carlmig/radio-tray/issues">issues</a> page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on <a href="http://bitbucket.org">BitBucket</a> using Mercurial as source control. Forking and contributing patches should be no trouble.</p>
+
+<h1>Radio Tray Technical Documentation</h1>
+
+<p>This document uses the following conventions:</p>
+
+<ul>
+<li>"$> <code>command</code>" denotes a command line prompt and associated command.</li>
+<li>Any <code>word</code> in a mono spaced font is a technical keyword.</li>
+</ul>
 
 <h2>Bookmarks.xml</h2>
 

@@ -10,7 +10,7 @@ On Windows, *Radio? Sure!* is a similar program that also resides in the tasktra
 
 On Linux, Radio Tray is fairly unique. Some people would compare it to KDE's [Amarok](http://amarok.kde.org/) or Novell's [Banshee](http://banshee.fm/), but these are more general media applications and are far more featured. They stray from Radio Tray's single purposeness. They aren't as well suited to managing and playing Internet Radio, despite being able to.
 
-[Audacious](http://audacious-media-player.org/) shares Radio Tray's simplicity, but is geared to being an all around music player. It has the same support for Internet radio station, but doesn't do a very good job managing or bookmarking them. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.
+[Audacious](http://audacious-media-player.org/) shares Radio Tray's simplicity, but is geared to being an all around music player. While Radio Tray is designed to stay hidden, Audacious is much more front and center, having the user interact with it more often to set playlists and move the window around.
 
 
 ##Using Radio Tray
@@ -27,6 +27,10 @@ The stream will start playing and the current song will be listed at the top of 
 
 ![Song listing](img/playing-cropped.png)
 
+When a stream starts playing or it changes song, a notification dialog will appear at the corner of your screen.
+
+![Notification dialog](img/libnotify-cropped.png)
+
 To stop playback, select *Turn Off "**Station Name**"* from the menu.
 
 ##Adding and Editing Radio Stations
@@ -36,7 +40,7 @@ Radio Trays offers a simple and intuitive interface to modify Internet Radio sta
 
 Bookmarks can live at the root of the *Radio Stations* dialog or be grouped together. Here is an example of the former (*NPR*) and the latter (*CBC*). 
 
-After modifying bookmarks, reload them by selecting *Preferences -> Reload Bookmarks* from Radio Tray's main menu. 
+Close the dialog to save your modifications.
 
 ###Adding a New Station
 
