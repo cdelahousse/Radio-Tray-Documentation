@@ -1,3 +1,9 @@
+#Radio Tray Technical Documentation
+
+This document uses the following conventions:
+
+* "$> `command`" denotes a command line prompt and associated command.
+* Any `word` in a mono spaced font is a technical keyword.
 
 ##Bookmarks.xml
 
