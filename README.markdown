@@ -20,4 +20,4 @@ You need to have markdown installed to build the documentation.
 	sudo apt-get install markdown
 
 
-/* vim: set filetype=markdown : */ 
+vim: set filetype=markdown :

@@ -2,6 +2,7 @@
 
 Things that need to be done for this project
 
-* Publish target in makefile to add html headers and footers
+* Add plugin framework documentation
+* Add DBus information
 
-/* vim: set filetype=markdown : */ 
+vim: set filetype=markdown : 
