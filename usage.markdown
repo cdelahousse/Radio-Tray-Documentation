@@ -1,11 +1,5 @@
 #Radiotray
 
-This document uses the following conventions:
-
-* "$> `command`" denotes a command line prompt and associated command.
-* Any `word` in a mono spaced font is a technical keyword.
-* References to source material are links within the document's body.
-
 ###Description
 
 Radio Tray is a simple internet radio player that lives in the system tray or Application Indicator. It saves a list of your favourite stations for easy access to wonderful music. Its aim is to be as simple as possible, staying out of the way and doing one thing really well.
@@ -221,4 +215,5 @@ If you'd like to keep up with the bleeding edge or your distribution doesn't shi
 ##Contributing
 
 Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's [Transiflex page](http://www.transifex.net/projects/p/radiotray/) for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's [issues](https://bitbucket.org/carlmig/radio-tray/issues) page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on [BitBucket](http://bitbucket.org) using Mercurial as source control. Forking and contributing patches should be no trouble.
+
 
