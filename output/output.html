@@ -210,9 +210,13 @@
 
 <p><code>setup.py</code> uses Python's <code>distutils</code> <a href="http://docs.python.org/2/library/distutils.html">library</a> to install the application. This is the conventional way of distributing Python modules to many systems and handles the distribution specific installation details. For more information visit Python Doc's <a href="http://docs.python.org/2/install/index.html">Installing Python Modules</a>.</p>
 
+<h2>Contributing</h2>
+
+<p>Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's <a href="http://www.transifex.net/projects/p/radiotray/">Transiflex page</a> for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's <a href="https://bitbucket.org/carlmig/radio-tray/issues">issues</a> page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on <a href="http://bitbucket.org">BitBucket</a> using Mercurial as source control. Forking and contributing patches should be no trouble.</p>
+
 <h2>Bookmarks.xml</h2>
 
-<p>All radio stations are saved to <code>bookmarks.xml</code> which is located in <code>/home/&lt;user&gt;/.local/share/radiotray</code>. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default <code>bookmarks.xml</code> will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.</p>
+<p>All radio stations are saved to <code>bookmarks.xml</code> which is located in <code>~/.local/share/radiotray</code>. It is an XML file that uses a nested hierarchy to represent groups and stations. If a bookmarks file isn't at that location, the default <code>bookmarks.xml</code> will be copied over. Moving or backing up an existing set of bookmarks is as simple as copying this file.</p>
 
 <p>Here is an example of a simple <code>bookmarks.xml</code> file. It describes three radio stations. Two that are grouped together and one that will be located at the root of the stations list.</p>
 
@@ -238,7 +242,7 @@
 
 <h2>Config.xml</h2>
 
-<p>Radio Tray's configuration state is saved to <code>config.xml</code> which is located in <code>/home/&lt;user&gt;/.local/share/radiotray/</code>. If one isn't in that folder, the default configuration file will be copied over.</p>
+<p>Radio Tray's configuration state is saved to <code>config.xml</code> which is located in <code>~/.local/share/radiotray/</code>. If one isn't in that folder, the default configuration file will be copied over.</p>
 
 <pre><code>&lt;config&gt;
   &lt;option name="volume_increment" value="0.05"/&gt;
@@ -313,10 +317,10 @@
 <h4>User Specific Directories</h4>
 
 <ul>
-<li><p><code>/home/&lt;user&gt;/.local/share/radiotray</code></p>
+<li><p><code>~/.local/share/radiotray</code></p>
 
 <p>Bookmark and configuration files specific to a user. Radio Tray will load these before looking at the default configuration directory below.</p></li>
-<li><p><code>/home/&lt;user&gt;/.local/share/radiotray/plugins</code></p>
+<li><p><code>~/.local/share/radiotray/plugins</code></p>
 
 <p>User specific plug ins and their configurations.</p></li>
 </ul>
@@ -352,8 +356,4 @@
 
 <p>Stores Radio Tray's Python byte code.</p></li>
 </ul>
-
-<h2>Contributing</h2>
-
-<p>Radio Tray is a small project, but it can always use more help. Here are a few suggestions. The newest version comes with a well defined plug-in framework. Try implementing a new feature. If you'd like to to translate the program into your native language, visit Radio Tray's <a href="http://www.transifex.net/projects/p/radiotray/">Transiflex page</a> for instructions on how to do so. Lastly, if you find a bug or would like to implement a new feature, please visit the project's <a href="https://bitbucket.org/carlmig/radio-tray/issues">issues</a> page where you can create bug reports or give suggestions. The best way to contribute is to read through the open issues and implement bug fixes. The project is hosted on <a href="http://bitbucket.org">BitBucket</a> using Mercurial as source control. Forking and contributing patches should be no trouble.</p>
 </body></html>

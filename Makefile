@@ -1,14 +1,17 @@
+
+OUTPUT := output/
+
 .PHONY: clean build publish
 
 build:
-	cat introduction.markdown documentation.markdown > output/output.markdown
+	cat usage.markdown technical.markdown > $(OUTPUT)output.markdown
 
 html: clean build
-	echo '<html><head><link rel="stylesheet" href="markdown.css"></head><body>' > output/output.html
-	markdown output/output.markdown >> output/output.html
-	echo '</body></html>' >> output/output.html
-	mkdir output/img
-	cp img/* output/img/
+	echo '<html><head><link rel="stylesheet" href="markdown.css"></head><body>' > $(OUTPUT)output.html
+	markdown $(OUTPUT)output.markdown >> $(OUTPUT)output.html
+	echo '</body></html>' >> $(OUTPUT)output.html
+	mkdir $(OUTPUT)img
+	cp img/* $(OUTPUT)img/
 
 clean:
-	rm -rf output/output.markdown output/output.html output/img*
+	rm -rf $(OUTPUT)output.markdown $(OUTPUT)output.html $(OUTPUT)img*
