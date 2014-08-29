@@ -1,5 +1,6 @@
-
+ASSETS := assets/
 OUTPUT := output/
+PAGE := $(OUTPUT)index.html
 
 .PHONY: clean build publish
 
@@ -7,11 +8,14 @@ build:
 	cat usage.markdown technical.markdown > $(OUTPUT)output.markdown
 
 html: clean build
-	echo '<html><head><link rel="stylesheet" href="markdown.css"></head><body>' > $(OUTPUT)output.html
-	markdown $(OUTPUT)output.markdown >> $(OUTPUT)output.html
-	echo '</body></html>' >> $(OUTPUT)output.html
+	cat $(ASSETS)header.html > $(PAGE)
+	echo "<span class=\"last-updated\">\nLast Updated:" `date +%F` "</span>" >> $(PAGE)
+	markdown $(OUTPUT)output.markdown >> $(PAGE)
+	cat $(ASSETS)footer.html >> $(PAGE)
 	mkdir $(OUTPUT)img
 	cp img/* $(OUTPUT)img/
+	cp assets/markdown.css $(OUTPUT)
 
 clean:
-	rm -rf $(OUTPUT)output.markdown $(OUTPUT)output.html $(OUTPUT)img*
+	rm -rf $(OUTPUT)*
+
