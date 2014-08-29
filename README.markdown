@@ -3,6 +3,7 @@
 Written by [Christian Delahousse](http://christian.delahousse.ca) for the [Radio
 Tray](http://radiotray.sourceforge.net/) project.
 
+Located at <http://christian.delahousse.ca/radiotray>.
 
 ##How to build the final Markdown document
 
